@@ -12,6 +12,9 @@ public class Mensajero extends Persona {
 		this.contador = contador;
 		this.gan_adicional = gan_adicional;
 		this.facturas = facturas;
+		
+	
+		
 	}
 	
 	
