@@ -12,6 +12,7 @@ public class Usuario extends Persona{
 		this.nomUsuario=nomU;
 		this.contrasena=con;
 		totalUsuarios++;
+		
 	}
 
 }
