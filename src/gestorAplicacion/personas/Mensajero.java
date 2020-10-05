@@ -13,8 +13,30 @@ public class Mensajero extends Persona {
 		this.gan_adicional = gan_adicional;
 		this.facturas = facturas;
 		
-	
-		
+	}
+	public String getTransporte() {
+		return transporte;
+	}
+	public void setTransporte(String transporte) {
+		this.transporte = transporte;
+	}
+	public int getContador() {
+		return contador;
+	}
+	public void setContador(int contador) {
+		this.contador = contador;
+	}
+	public int getGan_adicional() {
+		return gan_adicional;
+	}
+	public void setGan_adicional(int gan_adicional) {
+		this.gan_adicional = gan_adicional;
+	}
+	public ArrayList<Factura> getFacturas() {
+		return facturas;
+	}
+	public void setFacturas(ArrayList<Factura> facturas) {
+		this.facturas = facturas;
 	}
 
 }
