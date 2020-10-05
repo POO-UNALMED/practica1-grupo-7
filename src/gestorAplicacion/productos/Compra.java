@@ -1,4 +1,5 @@
 package gestorAplicacion.productos;
+import gestorAplicacion.personas.*;
 import java.util.ArrayList;
 
 public class Compra {

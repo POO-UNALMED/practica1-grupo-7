@@ -1,4 +1,5 @@
 package gestorAplicacion.productos;
+import gestorAplicacion.personas.*;
 import java.util.ArrayList;
 
 public class Factura {
@@ -12,7 +13,7 @@ public class Factura {
 	public String telAtencion;
 	Supermercado superm;
 	Compra compra;
-	public static ArrayList <DetFactura> Carrito = new ArrayList<DetFactura>();
+	public static ArrayList <DetalleFactura> Carrito = new ArrayList<DetalleFactura>();
     public Factura(Mensajero idM,String idFac,Usuario user,double total,double iva,double subTotal,String banco,String telAtencion,Supermercado superm,Compra compra) {
     	this.idMen=idM;
     	this.idFactura=idFac;

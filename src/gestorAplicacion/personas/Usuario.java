@@ -1,5 +1,6 @@
 package gestorAplicacion.personas;
 import java.util.ArrayList;
+import gestorAplicacion.productos.*;
 
 public class Usuario extends Persona{
 	private String nomUsuario;
