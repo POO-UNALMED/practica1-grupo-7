@@ -12,7 +12,18 @@ public class Usuario extends Persona{
 		this.nomUsuario=nomU;
 		this.contrasena=con;
 		totalUsuarios++;
-		
 	}
-
+	public String getNomUsuario() {
+		return nomUsuario;
+	}
+	public void setNomUsuario(String nomUsuario) {
+		this.nomUsuario = nomUsuario;
+	}
+	public String getContrasena() {
+		return contrasena;
+	}
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+	
 }

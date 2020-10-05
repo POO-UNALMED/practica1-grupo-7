@@ -11,8 +11,28 @@ public class Compra {
 		this.user=user;
 		this.fact=fac;
 		
-		
+			
 	}
+	public Usuario getUser() {
+		return user;
+	}
+	public void setUser(Usuario user) {
+		this.user = user;
+	}
+	public Factura getFact() {
+		return fact;
+	}
+	public void setFact(Factura fact) {
+		this.fact = fact;
+	}
+	public static int getTotalCompra() {
+		return totalCompra;
+	}
+	public static void setTotalCompra(int totalCompra) {
+		Compra.totalCompra = totalCompra;
+	}
+	
+	
 	
 
 }
