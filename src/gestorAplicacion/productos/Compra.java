@@ -10,6 +10,8 @@ public class Compra {
 	Compra(Usuario user,Factura fac){
 		this.user=user;
 		this.fact=fac;
+		
+		
 	}
 	
 
