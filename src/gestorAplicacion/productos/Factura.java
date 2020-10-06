@@ -3,18 +3,23 @@ import gestorAplicacion.personas.*;
 import java.util.ArrayList;
 
 public class Factura {
+
 	public Mensajero idMen;
-	public String idFactura;
+	public int idFactura;
 	public Usuario user;
 	public double total;
 	public double iva;
 	public double subTotal_detallefac;
 	public String banco;
-	public String telAtencion;
-	Supermercado superm;
+	public static final String telAtencion="911";
+	public static final Supermercado superm;
 	Compra compra;
 	public static ArrayList <DetalleFactura> Carrito = new ArrayList<DetalleFactura>();
-    public Factura(Mensajero idM,String idFac,Usuario user,double total,double iva,double subTotal,String banco,String telAtencion,Supermercado superm,Compra compra) {
+	static {
+		Supermercado superm1=new Supermercado("Exito","Cll11","30988555");
+		superm=superm1;
+	}
+    public Factura(Mensajero idM,int idFac,Usuario user,double total,double iva,double subTotal,String banco,Compra compra) {
     	this.idMen=idM;
     	this.idFactura=idFac;
     	this.user=user;
@@ -22,8 +27,6 @@ public class Factura {
     	this.iva=iva;
     	this.subTotal_detallefac=subTotal;
     	this.banco=banco;
-    	this.telAtencion=telAtencion;
-    	this.superm=superm;
     	this.compra=compra;	        	
     }
 	public Mensajero getIdMen() {
@@ -32,11 +35,8 @@ public class Factura {
 	public void setIdMen(Mensajero idMen) {
 		this.idMen = idMen;
 	}
-	public String getIdFactura() {
+	public int getIdFactura() {
 		return idFactura;
-	}
-	public void setIdFactura(String idFactura) {
-		this.idFactura = idFactura;
 	}
 	public Usuario getUser() {
 		return user;
@@ -70,9 +70,5 @@ public class Factura {
 	}
 	public String getTelAtencion() {
 		return telAtencion;
-	}
-	public void setTelAtencion(String telAtencion) {
-		this.telAtencion = telAtencion;
-	}
-	
+	}	
 }
