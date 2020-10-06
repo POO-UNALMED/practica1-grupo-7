@@ -6,14 +6,14 @@ public class Producto {
 	public String nom_producto;
 	public int contador;
 	public String tipo_producto;
+	public static int totalProductos=0;
 	public Producto(String id_producto, int precio, String nom_producto, int contador, String tipo_producto) {
 		this.id_producto = id_producto;
 		this.precio = precio;
 		this.nom_producto = nom_producto;
 		this.contador = contador;
 		this.tipo_producto = tipo_producto;
-		
-			
+		totalProductos++;	
 	}
 	public String getId_producto() {
 		return id_producto;
@@ -45,7 +45,10 @@ public class Producto {
 	public void setTipo_producto(String tipo_producto) {
 		this.tipo_producto = tipo_producto;
 	}
-	
-	
-
+	public int totalProductos(){
+		return totalProductos;
+	}
+	public void reStock(int cantidad) {
+		contador+=cantidad;
+	}
 }
