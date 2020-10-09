@@ -10,7 +10,8 @@ public class DetalleFactura {
 		this.id_factura = id_factura;
 		this.id_producto = id_producto;
 		this.cantidad = cantidad;
-		this.subtotal = subtotal;			
+		this.subtotal = subtotal;
+		
 	}
 	public Factura getId_factura() {
 		return id_factura;

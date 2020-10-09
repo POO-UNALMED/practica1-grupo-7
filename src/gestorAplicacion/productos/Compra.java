@@ -10,9 +10,7 @@ public class Compra {
 	public static int totalCompra=0;
 	Compra(Usuario user,Factura fac){
 		this.user=user;
-		this.fact=fac;
-		
-			
+		this.fact=fac;		
 	}
 	public Usuario getUser() {
 		return user;
@@ -33,14 +31,20 @@ public class Compra {
 		Compra.totalCompra = totalCompra;
 	}
 	public void agregarCarrito(Producto pro,int cant) {
-		Carrito.add(pro);
-		fact.subTotal_detallefac+=pro.precio;
-		pro.contador-=cant;
+		if (Producto.comprobarStock(pro,cant)==true) {
+			Carrito.add(pro);
+			fact.subTotal_detallefac+=pro.precio*cant;
+			pro.contador-=cant;	
+		}
+		else {
+			System.out.println("El producto se encuentra agotado");
+		}
 	}
 	public void retirarCarrito(Producto pro,int cant) {
 		Carrito.remove(pro);
-		fact.subTotal_detallefac-=pro.precio;
+		fact.subTotal_detallefac-=pro.precio*cant;
 		pro.contador+=cant;
+		
 	}
 	public Factura efectuarCompra(Mensajero idM,String banco,Compra compra) {
 		contadoridf++;
