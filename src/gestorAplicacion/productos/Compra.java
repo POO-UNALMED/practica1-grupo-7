@@ -6,11 +6,16 @@ public class Compra {
 	public static ArrayList <Producto> Carrito = new ArrayList<Producto>();
 	public Usuario user;
 	public Factura fact;
+	public Mensajero menID;
+	public Supermercado superm;
 	public static int contadoridf=0;
 	public static int totalCompra=0;
-	Compra(Usuario user,Factura fac){
+	public boolean propinabool=false;
+	Compra(Usuario user,Factura fac,Mensajero menID,Supermercado superm){
 		this.user=user;
-		this.fact=fac;		
+		this.fact=fac;
+		this.menID=menID;
+		this.superm=Factura.superm;
 	}
 	public Usuario getUser() {
 		return user;
@@ -34,7 +39,8 @@ public class Compra {
 		if (pro.comprobarStock(pro,cant)==true) {
 			Carrito.add(pro);
 			fact.subTotal_detallefac+=pro.precio*cant;
-			pro.stock-=cant;	
+			pro.stock-=cant;
+			
 		}
 		else {
 			System.out.println("El producto se encuentra agotado");
@@ -46,11 +52,29 @@ public class Compra {
 		pro.stock+=cant;
 		
 	}
-	public Factura efectuarCompra(Mensajero idM,String banco,Compra compra,Producto pro) {
+	public Factura efectuarCompra(String banco,Compra compra,Producto pro) {
 		contadoridf++;
+		//1ERA FUNCIONALIDAD
+		if (fact.subTotal_detallefac<20000) {
+			menID.propina+=10000;
+			propinabool=true;
+		}
 		double ivacomp=fact.subTotal_detallefac*pro.iva;
 		double total=ivacomp+fact.subTotal_detallefac;
-		return new Factura(idM,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
+		if (propinabool=true) {
+			total+=10000;
+			propinabool=false;
+		}
+		//3ERA FUNCIONALIDAD
+		user.Compras.add(this);
+		if (user.Compras.size()%3==0) {
+			total=total*0.85;
+			return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
+			System.out.println("Se ha efectuado un descuento por ser tu 3era compra con nosotros")
+		}
+		superm.Estadisticas.add(pro.nom_producto);
+		return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
+	
 	}
 	
 	

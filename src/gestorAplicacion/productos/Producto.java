@@ -1,5 +1,4 @@
 package gestorAplicacion.productos;
-import java.util.ArrayList;
 
 abstract class Producto {
 	public String id_producto;
