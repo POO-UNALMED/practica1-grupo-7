@@ -31,10 +31,10 @@ public class Compra {
 		Compra.totalCompra = totalCompra;
 	}
 	public void agregarCarrito(Producto pro,int cant) {
-		if (Producto.comprobarStock(pro,cant)==true) {
+		if (pro.comprobarStock(pro,cant)==true) {
 			Carrito.add(pro);
 			fact.subTotal_detallefac+=pro.precio*cant;
-			pro.contador-=cant;	
+			pro.stock-=cant;	
 		}
 		else {
 			System.out.println("El producto se encuentra agotado");
@@ -43,14 +43,14 @@ public class Compra {
 	public void retirarCarrito(Producto pro,int cant) {
 		Carrito.remove(pro);
 		fact.subTotal_detallefac-=pro.precio*cant;
-		pro.contador+=cant;
+		pro.stock+=cant;
 		
 	}
-	public Factura efectuarCompra(Mensajero idM,String banco,Compra compra) {
+	public Factura efectuarCompra(Mensajero idM,String banco,Compra compra,Producto pro) {
 		contadoridf++;
-		double ivac=fact.subTotal_detallefac*0.19;
-		double total=ivac+fact.subTotal_detallefac;
-		return new Factura(idM,contadoridf,user,total,ivac,fact.subTotal_detallefac,banco,this);
+		double ivacomp=fact.subTotal_detallefac*pro.iva;
+		double total=ivacomp+fact.subTotal_detallefac;
+		return new Factura(idM,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
 	}
 	
 	

@@ -1,21 +1,21 @@
 package gestorAplicacion.productos;
 import java.util.ArrayList;
 
-public class Producto {
+abstract class Producto {
 	public String id_producto;
 	public int precio;
 	public String nom_producto;
-	public int contador;
+	public int stock;
 	public String tipo_producto;
+	double iva;
 	public static int totalProductos=0;
-	private ArrayList<Producto> Products = new ArrayList<>();
-	
-	public Producto(String id_producto, int precio, String nom_producto, int contador, String tipo_producto) {
+	public Producto(String id_producto, int precio, String nom_producto, int stock, String tipo_producto,double iva) {
 		this.id_producto = id_producto;
 		this.precio = precio;
 		this.nom_producto = nom_producto;
-		this.contador = contador;
+		this.stock = stock;
 		this.tipo_producto = tipo_producto;
+		this.iva=iva;
 		totalProductos++;	
 	}
 	public String getId_producto() {
@@ -37,10 +37,10 @@ public class Producto {
 		this.nom_producto = nom_producto;
 	}
 	public int getContador() {
-		return contador;
+		return stock;
 	}
 	public void setContador(int contador) {
-		this.contador = contador;
+		this.stock = contador;
 	}
 	public String getTipo_producto() {
 		return tipo_producto;
@@ -51,21 +51,6 @@ public class Producto {
 	public int totalProductos(){
 		return totalProductos;
 	}
-	public void reStock(int cantidad) {
-		contador+=cantidad;
-	}
-	public void Inventario(){
-		for(Producto i:Products) {
-			System.out.println("hay"+i.contador+"del producto"+i.nom_producto);
-		}
-
-		}
-	public static boolean comprobarStock(Producto pro,int cantidad) {
-	    int totalprod=pro.contador-cantidad;
-		if (totalprod>0) {
-			return true;	
-	}
-		else {
-			return false,
-		}
+	public abstract void reStock(int cantidad);
+	public abstract boolean comprobarStock(Producto pro,int cantidad);
 }
