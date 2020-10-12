@@ -72,7 +72,7 @@ public class Compra {
 			System.out.println("Se ha efectuado un descuento a su compra");
 			return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
 		}
-		superm.Estadisticas.add(pro.nom_producto);
+		Supermercado.Estadisticas.add(pro.nom_producto);
 		return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
 	
 	}
