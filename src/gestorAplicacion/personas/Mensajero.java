@@ -42,7 +42,12 @@ public class Mensajero extends Persona {
 		for (int i=0;i<facturas.size();i++) {
 			salario+=facturas.get(i).total*0.05;
 		}
-		salario+=propina;
+		salario+=propina+bonoFactura();
+	}
+	public int bonoFactura() {
+		int bonomult=facturas.size()/5;
+		int bono=5000*bonomult;
+		return bono;
 	}
 
 }

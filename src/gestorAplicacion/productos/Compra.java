@@ -69,8 +69,8 @@ public class Compra {
 		user.Compras.add(this);
 		if (user.Compras.size()%3==0) {
 			total=total*0.85;
+			System.out.println("Se ha efectuado un descuento a su compra");
 			return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
-			System.out.println("Se ha efectuado un descuento por ser tu 3era compra con nosotros")
 		}
 		superm.Estadisticas.add(pro.nom_producto);
 		return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);

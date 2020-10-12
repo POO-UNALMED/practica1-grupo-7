@@ -27,7 +27,8 @@ public class Factura {
     	this.iva=iva;
     	this.subTotal_detallefac=subTotal;
     	this.banco=banco;
-    	this.compra=compra;	        	
+    	this.compra=compra;
+    	this.idMen.facturas.add(this);
     }
 	public Mensajero getIdMen() {
 		return idMen;

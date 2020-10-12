@@ -1,4 +1,5 @@
 package gestorAplicacion.productos;
+import gestorAplicacion.personas.*;
 import java.util.ArrayList;
 import java.util.Collections;
 public class Supermercado {
@@ -7,6 +8,7 @@ public class Supermercado {
 	private String tel;
 	private ArrayList<Producto> Products = new ArrayList<>();
 	public ArrayList<String> Estadisticas= new ArrayList<>();
+	public ArrayList<Mensajero> Empleados=new ArrayList<>();
 	public Supermercado(String nombre, String direccion, String tel) {
 		this.nombre = nombre;
 		this.direccion = direccion;
@@ -33,19 +35,41 @@ public class Supermercado {
 		}
 	}
 	//FUNCIONALIDAD 2
-	public String modaProd(){
+	public String prodMasPopular(){
 		String prodPop="";
 		int mayorveces = 0;
 		for(int i = 0; i < Estadisticas.size(); i++) {
-			int veces=Collections.frequency(Estadisticas, Estadisticas.get(i);
+			int veces=Collections.frequency(Estadisticas, Estadisticas.get(i));
 			if(veces > mayorveces) {
 				mayorveces = veces;
 				prodPop=Estadisticas.get(i);
 			}
-
 		}
 		return prodPop;
 	}
+	public String prodMenosPopular() {
+		String prodNoPop="";
+		int menorveces=0;
+		for(int i = 0; i < Estadisticas.size(); i++) {
+			int veces=Collections.frequency(Estadisticas, Estadisticas.get(i));
+			if(veces<menorveces) {
+				menorveces=veces;
+				prodNoPop=Estadisticas.get(i);
+		}
+		}
+		return prodNoPop;
+	}
+	public Mensajero EmpleadoDelMes() {
+		Mensajero mejorEmpleado=null;
+		int mayor=0;
+		for (Mensajero m:Empleados) {
+			int cantidadFact=m.facturas.size();
+			if (cantidadFact>mayor) {
+				mayor=cantidadFact;
+				mejorEmpleado=m;
+			}
+		}
+		return mejorEmpleado;
+	}
+}
 
-}
-}
