@@ -65,6 +65,7 @@ public class Compra {
 			total+=10000;
 			propinabool=false;
 		}
+		Supermercado.Estadisticas.add(pro.nom_producto);
 		//3ERA FUNCIONALIDAD
 		user.Compras.add(this);
 		if (user.Compras.size()%3==0) {
@@ -72,8 +73,13 @@ public class Compra {
 			System.out.println("Se ha efectuado un descuento a su compra");
 			return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
 		}
-		Supermercado.Estadisticas.add(pro.nom_producto);
-		return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
+		
+		else {
+			return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);	
+		}
+		
+		
+		
 	
 	}
 	
