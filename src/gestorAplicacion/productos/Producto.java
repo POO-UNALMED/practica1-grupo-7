@@ -50,6 +50,19 @@ abstract class Producto {
 	public int totalProductos(){
 		return totalProductos;
 	}
-	public abstract void reStock(int cantidad);
-	public abstract boolean comprobarStock(Producto pro,int cantidad);
+	public void reStock(int cantidad) {
+		this.stock+=cantidad;
+	}
+	public boolean comprobarStock(Producto pro,int cant) {
+		
+	    int totalprod=pro.stock-cant;
+		if (totalprod>0) {
+			return true;	
+	}
+		else {
+			return false;
+		}
+}
+	public abstract String Descripcion();
+	
 }

@@ -3,7 +3,6 @@ import gestorAplicacion.personas.*;
 import java.util.ArrayList;
 
 public class Compra {
-	public static ArrayList <Producto> Carrito = new ArrayList<Producto>();
 	public Usuario user;
 	public Factura fact;
 	public Mensajero menID;
@@ -15,7 +14,7 @@ public class Compra {
 		this.user=user;
 		this.fact=fac;
 		this.menID=menID;
-		this.superm=Factura.superm;
+		this.superm=superm;
 	}
 	public Usuario getUser() {
 		return user;
@@ -35,22 +34,20 @@ public class Compra {
 	public static void setTotalCompra(int totalCompra) {
 		Compra.totalCompra = totalCompra;
 	}
-	public void agregarCarrito(Producto pro,int cant) {
+	public void agregar(Producto pro,int cant,Supermercado superm) {
 		if (pro.comprobarStock(pro,cant)==true) {
-			Carrito.add(pro);
+			superm.Estadisticas.add(pro.nom_producto);
 			fact.subTotal_detallefac+=pro.precio*cant;
-			pro.stock-=cant;
-			
+			pro.stock-=cant;		
 		}
 		else {
 			System.out.println("El producto se encuentra agotado");
 		}
 	}
-	public void retirarCarrito(Producto pro,int cant) {
-		Carrito.remove(pro);
+	public void retirar(Producto pro,int cant,Supermercado superm) {
+		superm.Estadisticas.remove(pro.nom_producto);
 		fact.subTotal_detallefac-=pro.precio*cant;
-		pro.stock+=cant;
-		
+		pro.stock+=cant;	
 	}
 	public Factura efectuarCompra(String banco,Compra compra,Producto pro) {
 		contadoridf++;
@@ -65,7 +62,6 @@ public class Compra {
 			total+=10000;
 			propinabool=false;
 		}
-		Supermercado.Estadisticas.add(pro.nom_producto);
 		//3ERA FUNCIONALIDAD
 		user.Compras.add(this);
 		if (user.Compras.size()%3==0) {
@@ -77,10 +73,6 @@ public class Compra {
 		else {
 			return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);	
 		}
-		
-		
-		
-	
 	}
 	
 	

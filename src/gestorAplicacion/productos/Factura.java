@@ -12,13 +12,9 @@ public class Factura {
 	public double subTotal_detallefac;
 	public String banco;
 	public static final String telAtencion="911";
-	public static final Supermercado superm;
+	public  Supermercado superm;
 	Compra compra;
-	public static ArrayList <DetalleFactura> Carrito = new ArrayList<DetalleFactura>();
-	static {
-		Supermercado superm1=new Supermercado("Exito","Cll11","30988555");
-		superm=superm1;
-	}
+	public  ArrayList <DetalleFactura> productList = new ArrayList<DetalleFactura>();
     public Factura(Mensajero idM,int idFac,Usuario user,double total,double iva,double subTotal,String banco,Compra compra) {
     	this.idMen=idM;
     	this.idFactura=idFac;
