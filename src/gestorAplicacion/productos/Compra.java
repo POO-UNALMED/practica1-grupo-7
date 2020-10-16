@@ -44,11 +44,6 @@ public class Compra {
 			System.out.println("El producto se encuentra agotado");
 		}
 	}
-	public void retirar(Producto pro,int cant,Supermercado superm) {
-		superm.Estadisticas.remove(pro.nom_producto);
-		fact.subTotal_detallefac-=pro.precio*cant;
-		pro.stock+=cant;	
-	}
 	public Factura efectuarCompra(String banco,Compra compra,Producto pro) {
 		contadoridf++;
 		//1ERA FUNCIONALIDAD
