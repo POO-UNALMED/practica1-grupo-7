@@ -9,8 +9,11 @@ public class Mensajero extends Persona {
 	public int salario=0;
 	public Supermercado superm;
 	public ArrayList <Factura> facturas=new ArrayList <Factura>();
-	public Mensajero(String nombre, String id,String genero,String direccion,int tel_fijo,int celular,String transporte, int contador, int gan_adicional) {
-		super(nombre,id,genero,direccion,tel_fijo,celular);
+	
+	
+	
+	public Mensajero(String nombre, String id,String genero,String direccion,int telFijo,int numCelular,String transporte, int contador, int gan_adicional) {
+		super(nombre,id,genero,direccion,telFijo,numCelular);
 		this.transporte = transporte;
 		this.contador = contador;
 		this.gan_adicional = gan_adicional;
