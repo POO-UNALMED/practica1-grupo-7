@@ -7,10 +7,10 @@ public class Usuario extends Persona{
 	private String contrasena;
 	public  ArrayList <Compra> Compras = new ArrayList<Compra>();
 	private static int totalUsuarios=0;
-	Usuario(String nom,String id,String gen,String dir,int tel,int num,String nomU,String con){
-		super(nom,id,gen,dir,tel,num);
-		this.nomUsuario=nomU;
-		this.contrasena=con;
+	Usuario(String nombre,String id,String genero,String direccion,int telFijo,int numCelular,String nomUsuario,String contrasena){
+		super(nombre,id,genero,direccion,telFijo,numCelular);
+		this.nomUsuario=nomUsuario;
+		this.contrasena=contrasena;
 		setTotalUsuarios(getTotalUsuarios()+1);
 	}
 	public String getNomUsuario() {
