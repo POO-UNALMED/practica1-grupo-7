@@ -6,17 +6,18 @@ public class Persona {
 	protected String genero;
 	protected String direccion;
 	protected int telFijo;
-	protected int numCalcular;
-	private static int totalPersonas;
-	public Persona(String nom,String id,String gen,String dir,int tel,int num) {
-		this.nombre=nom;
-		this.id=id;
-		this.genero=gen;
-		this.direccion=dir;
-		this.telFijo=tel;
-		this.numCalcular=num;
-		totalPersonas++;
+	protected int numCelular;
+	private static int totalPersonas;	
+		
+	public Persona(String nombre, String id, String genero, String direccion, int telFijo, int numCelular) {
+		this.nombre = nombre;
+		this.id = id;
+		this.genero = genero;
+		this.direccion = direccion;
+		this.telFijo = telFijo;
+		this.numCelular = numCelular;
 	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -48,10 +49,10 @@ public class Persona {
 		this.telFijo = telFijo;
 	}
 	public int getNumCalcular() {
-		return numCalcular;
+		return numCelular;
 	}
 	public void setNumCalcular(int numCalcular) {
-		this.numCalcular = numCalcular;
+		this.numCelular = numCalcular;
 	}
 	public static int getTotalPersonas() {
 		return totalPersonas;
