@@ -10,6 +10,7 @@ public class Compra {
 	public static int contadoridf=0;
 	public static int totalCompra=0;
 	public boolean propinabool=false;
+	public double sumValorAgregado=0;
 	Compra(Usuario user,Factura fac,Mensajero menID,Supermercado superm){
 		this.user=user;
 		this.fact=fac;
@@ -38,6 +39,7 @@ public class Compra {
 		if (pro.comprobarStock(pro,cant)==true) {
 			superm.Estadisticas.add(pro.nom_producto);
 			fact.subTotal_detallefac+=pro.precio*cant;
+			sumValorAgregado+=pro.valorAgregado();
 			pro.stock-=cant;		
 		}
 		else {
@@ -51,8 +53,7 @@ public class Compra {
 			menID.propina+=10000;
 			propinabool=true;
 		}
-		double ivacomp=fact.subTotal_detallefac*pro.iva;
-		double total=ivacomp+fact.subTotal_detallefac;
+		double total=sumValorAgregado+fact.subTotal_detallefac;
 		if (propinabool=true) {
 			total+=10000;
 			propinabool=false;
@@ -62,11 +63,11 @@ public class Compra {
 		if (user.Compras.size()%3==0) {
 			total=total*0.85;
 			System.out.println("Se ha efectuado un descuento a su compra");
-			return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);
+			return new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this);
 		}
 		
 		else {
-			return new Factura(menID,contadoridf,user,total,ivacomp,fact.subTotal_detallefac,banco,this);	
+			return new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this);	
 		}
 	}
 	

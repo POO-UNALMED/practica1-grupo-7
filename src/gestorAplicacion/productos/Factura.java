@@ -8,7 +8,7 @@ public class Factura {
 	public int idFactura;
 	public Usuario user;
 	public double total;
-	public double iva;
+	public double sumValorAgregado;
 	public double subTotal_detallefac;
 	public String banco;
 	public static final String telAtencion="911";
@@ -20,7 +20,7 @@ public class Factura {
     	this.idFactura=idFac;
     	this.user=user;
     	this.total=total;
-    	this.iva=iva;
+    	this.sumValorAgregado=iva;
     	this.subTotal_detallefac=subTotal;
     	this.banco=banco;
     	this.compra=compra;
@@ -48,10 +48,10 @@ public class Factura {
 		this.total = total;
 	}
 	public double getIva() {
-		return iva;
+		return sumValorAgregado;
 	}
 	public void setIva(double iva) {
-		this.iva = iva;
+		this.sumValorAgregado = iva;
 	}
 	public double getSubTotal_detallefac() {
 		return subTotal_detallefac;

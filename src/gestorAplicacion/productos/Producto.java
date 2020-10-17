@@ -6,15 +6,13 @@ abstract class Producto {
 	public String nom_producto;
 	public int stock;
 	public String tipo_producto;
-	double iva;
 	public static int totalProductos=0;
-	public Producto(String id_producto, int precio, String nom_producto, int stock, String tipo_producto,double iva) {
+	public Producto(String id_producto, int precio, String nom_producto, int stock, String tipo_producto) {
 		this.id_producto = id_producto;
 		this.precio = precio;
 		this.nom_producto = nom_producto;
 		this.stock = stock;
 		this.tipo_producto = tipo_producto;
-		this.iva=iva;
 		setTotalProductos(getTotalProductos()+1);	
 	}
 	public String getId_producto() {
@@ -68,5 +66,6 @@ abstract class Producto {
 		}
 }
 	public abstract String Descripcion();
+	public abstract double valorAgregado();
 	
 }
