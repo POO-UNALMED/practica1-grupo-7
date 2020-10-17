@@ -11,7 +11,7 @@ public class Usuario extends Persona{
 		super(nom,id,gen,dir,tel,num);
 		this.nomUsuario=nomU;
 		this.contrasena=con;
-		totalUsuarios++;
+		setTotalUsuarios(getTotalUsuarios()+1);
 	}
 	public String getNomUsuario() {
 		return nomUsuario;
@@ -25,5 +25,13 @@ public class Usuario extends Persona{
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
+	public static int getTotalUsuarios() {
+		return totalUsuarios;
+	}
+	public static void setTotalUsuarios(int totalUsuarios) {
+		Usuario.totalUsuarios = totalUsuarios;
+	}
+	
+		
 	
 }
