@@ -31,6 +31,12 @@ public class Usuario extends Persona{
 	public static void setTotalUsuarios(int totalUsuarios) {
 		Usuario.totalUsuarios = totalUsuarios;
 	}
+	public ArrayList<Compra> getCompras() {
+		return Compras;
+	}
+	public void setCompras(ArrayList<Compra> compras) {
+		Compras = compras;
+	}
 	
 		
 	
