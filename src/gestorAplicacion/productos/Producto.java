@@ -15,7 +15,7 @@ abstract class Producto {
 		this.stock = stock;
 		this.tipo_producto = tipo_producto;
 		this.iva=iva;
-		totalProductos++;	
+		setTotalProductos(getTotalProductos()+1);	
 	}
 	public String getId_producto() {
 		return id_producto;
@@ -46,9 +46,13 @@ abstract class Producto {
 	}
 	public void setTipo_producto(String tipo_producto) {
 		this.tipo_producto = tipo_producto;
-	}
-	public int totalProductos(){
+	}	
+	
+	public static int getTotalProductos() {
 		return totalProductos;
+	}
+	public static void setTotalProductos(int totalProductos) {
+		Producto.totalProductos = totalProductos;
 	}
 	public void reStock(int cantidad) {
 		this.stock+=cantidad;
