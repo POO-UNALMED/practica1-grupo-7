@@ -5,14 +5,15 @@ import gestorAplicacion.productos.*;
 public class Usuario extends Persona implements Empleado{
 	private String nomUsuario;
 	private String contrasena;
-	public int Caja;
+	public int caja;
+	public int salario_cajero;
 	public  ArrayList <Compra> Compras = new ArrayList<Compra>();
 	private static int totalUsuarios=0;
 	Usuario(String nombre,String id,String genero,String direccion,int telFijo,int numCelular,String nomUsuario,String contrasena,int Caja){
 		super(nombre,id,genero,direccion,telFijo,numCelular);
 		this.nomUsuario=nomUsuario;
 		this.contrasena=contrasena;
-		this.Caja=Caja;
+		this.caja=Caja;
 		setTotalUsuarios(getTotalUsuarios()+1);
 	}
 	public String getNomUsuario() {
@@ -40,14 +41,11 @@ public class Usuario extends Persona implements Empleado{
 		Compras = compras;
 	}
 	@Override
-	public String mostrarCargo() {
-		return this.nombre+" es un cajero";
+	public String datosEmpleado() {
+		return this.nombre+" es un cajero, identificado con "+this.id+
+				   ", su direccion es "+this.direccion+", tiene telefono fijo "+
+				   this.telFijo+", y numero adicional "+this.numCelular+"atiende en la caja"+
+				   this.caja+" y tiene con un sueldo de "+this.salario_cajero;
 	}
-	@Override
-	public String mostrarSalario() {		
-		return this.nombre+" tiene un salario de $1'200.000";
-	}
-	
-			
-	
+		
 }

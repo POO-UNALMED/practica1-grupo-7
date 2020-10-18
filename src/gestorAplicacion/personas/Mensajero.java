@@ -1,12 +1,13 @@
 package gestorAplicacion.personas;
 import gestorAplicacion.productos.*;
+
 import java.util.*;
 public class Mensajero extends Persona implements Empleado{
 	public String transporte;
 	public int contador;
 	public int gan_adicional;
 	public int propina=0;
-	public int salario=0;
+	public int salario_mensajero=0;
 	public Supermercado superm;
 	public ArrayList <Factura> facturas=new ArrayList <Factura>();
 	
@@ -45,9 +46,9 @@ public class Mensajero extends Persona implements Empleado{
 	}
 	public void pagoTotal() {
 		for (int i=0;i<facturas.size();i++) {
-			salario+=facturas.get(i).total*0.05;
+			salario_mensajero+=facturas.get(i).total*0.05;
 		}
-		salario+=propina+bonoFactura();
+		salario_mensajero+=propina+bonoFactura();
 	}
 	public int bonoFactura() {
 		int bonomult=facturas.size()/5;
@@ -55,14 +56,11 @@ public class Mensajero extends Persona implements Empleado{
 		return bono;
 	}
 	@Override
-	public String mostrarCargo() {
-		return this.nombre+" es un mensajero";
+	public String datosEmpleado() {
+		return this.nombre+" es un mensajero, identificado con "+this.id+
+			   ", su direccion es "+this.direccion+", tiene telefono fijo "+
+			   this.telFijo+", y numero adicional "+this.numCelular+" utiliza "+this.transporte
+			   +" y tiene con un sueldo de "+this.salario_mensajero;
 	}
-	@Override
-	public String mostrarSalario() {
-		return this.nombre+" tiene un sueldo de $900.000";
-	}
-	
-	
 
 }
