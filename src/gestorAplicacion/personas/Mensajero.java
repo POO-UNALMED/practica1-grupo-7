@@ -10,10 +10,7 @@ public class Mensajero extends Persona implements Empleado{
 	public int salario_mensajero=0;
 	public Supermercado superm;
 	public ArrayList <Factura> facturas=new ArrayList <Factura>();
-	
-	
-	
-	public Mensajero(String nombre, String id,String genero,String direccion,int telFijo,int numCelular,String transporte, int contador, int gan_adicional) {
+	public Mensajero(String nombre, String id,String genero,String direccion,String telFijo,String numCelular,String transporte, int contador, int gan_adicional) {
 		super(nombre,id,genero,direccion,telFijo,numCelular);
 		this.transporte = transporte;
 		this.contador = contador;
@@ -44,11 +41,24 @@ public class Mensajero extends Persona implements Empleado{
 	public void setFacturas(ArrayList<Factura> facturas) {
 		this.facturas = facturas;
 	}
-	public void pagoTotal() {
+	public int pagoTotal() {
 		for (int i=0;i<facturas.size();i++) {
 			salario_mensajero+=facturas.get(i).total*0.05;
 		}
-		salario_mensajero+=propina+bonoFactura();
+		return salario_mensajero+=propina+bonoFactura();
+	}
+	//SOBRECARGA METODO 1
+	public int pagoTotal(Mensajero mensajero) {
+		mensajero=this;
+		for (int i=0;i<facturas.size();i++) {
+			salario_mensajero+=facturas.get(i).total*0.05;
+		}
+		if (mensajero==superm.EmpleadoDelMes()) {
+			return salario_mensajero+=propina+bonoFactura()+100000;
+		}
+		else {
+			return salario_mensajero+=propina+bonoFactura();
+		}
 	}
 	public int bonoFactura() {
 		int bonomult=facturas.size()/5;

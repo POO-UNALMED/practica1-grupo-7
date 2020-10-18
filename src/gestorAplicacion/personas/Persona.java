@@ -5,11 +5,11 @@ public class Persona {
 	protected String id;
 	protected String genero;
 	protected String direccion;
-	protected int telFijo;
-	protected int numCelular;
+	protected String telFijo;
+	protected String numCelular;
 	private static int totalPersonas;	
 		
-	public Persona(String nombre, String id, String genero, String direccion, int telFijo, int numCelular) {
+	public Persona(String nombre, String id, String genero, String direccion, String telFijo, String numCelular) {
 		this.nombre = nombre;
 		this.id = id;
 		this.genero = genero;
@@ -42,16 +42,16 @@ public class Persona {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public int getTelFijo() {
+	public String getTelFijo() {
 		return telFijo;
 	}
-	public void setTelFijo(int telFijo) {
+	public void setTelFijo(String telFijo) {
 		this.telFijo = telFijo;
 	}
-	public int getNumCalcular() {
+	public String getNumCalcular() {
 		return numCelular;
 	}
-	public void setNumCalcular(int numCalcular) {
+	public void setNumCalcular(String numCalcular) {
 		this.numCelular = numCalcular;
 	}
 	public static int getTotalPersonas() {
