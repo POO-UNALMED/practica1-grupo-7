@@ -7,7 +7,7 @@ public class Tecnologia extends Producto {
 		super(id_producto,precio,nom_producto,stock,tipo_producto);
 	}
 	public String Descripcion() {
-		return "Lo Ultimo en tecnologia al alcanze,un paquete de   "+this.nom_producto;
+		return "Lo Ultimo en tecnologia al alcanze,un  "+this.nom_producto+" de ultima tecnologia";
 	}
 	public double valorAgregado() {
 		valorAgregado=this.precio*iva;
