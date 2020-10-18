@@ -1,5 +1,8 @@
 package gestorAplicacion.personas;
 
-public class Empleado {
-
+public interface Empleado {	
+	
+	String mostrarCargo();
+	String mostrarSalario();
+	
 }
