@@ -2,6 +2,8 @@ package gestorAplicacion.productos;
 import gestorAplicacion.personas.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import BaseDatos.*;
+
 public class Supermercado {
 	private String nombre;
 	private String direccion;
@@ -16,6 +18,7 @@ public class Supermercado {
 		this.tel = tel;
 		this.Empleados=Mensajero;
 		this.Cajero=Cajeros;
+		Lector.listaObjetos.add(this);
 	}
 	public String getNombre() {
 		return nombre;
