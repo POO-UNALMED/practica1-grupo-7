@@ -26,6 +26,24 @@ public class interfaz {
 			//CARGAR DATOS DEL SUPERMERCADO 4 A LA VARIABLE LOCAL SUPERM
 			break;
 		}
+		System.out.println("Por favor seleccione la operación que desea realizar en "+superm.getNombre()+": \n");
+		System.out.println("1. Realizar facturación de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar producto mas y menos vendido por el supermercado \n4. Finalizar operaciones");
+		int op1=scanner.nextInt();
+		switch (op1) {
+		case (1):
+			//AGREGAR TODOS LOS PRODUCTOS A FACTURAR SUMAR LOS PRECIOS Y TODO ESO
+			break;
+		case (2):
+			//FUNCIONALIDAD: DE MOMENTO MOSTRAR AL EMPLEADO CON MAS FACTURAS
+			break;
+		case (3):
+			//FUNCIONALIDAD: DE MOEMNTO MOSTRAR EL PRODUCTO MAS Y MENOS VENDIDO
+			break;
+		case (4):
+			System.out.println("Gracias por usar nuestro sistema el dia hoy, que tenga un buen dia y una prospera vida");
+		    //AQUI GUARDAR TODOS LOS DATOS OTRA VEZ (AUNQUE EN ESTE CASO NO SE REALIZARON CAMBIOS), LAS VARIABLES LOCALES SE REINICAN CADA VEZ QUE SE EJECUTA EL MAIN ASI QUE NO AHY NECESIDAD DE INICIALIZARLAS
+		    break;
+		}
 	}
 
 }
