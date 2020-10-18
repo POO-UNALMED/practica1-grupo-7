@@ -47,6 +47,7 @@ public class Usuario extends Persona implements Empleado{
 	public String mostrarSalario() {		
 		return this.nombre+" tiene un salario de $1'200.000";
 	}
+	
 			
 	
 }

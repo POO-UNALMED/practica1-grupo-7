@@ -63,5 +63,6 @@ public class Mensajero extends Persona implements Empleado{
 		return this.nombre+" tiene un sueldo de $900.000";
 	}
 	
+	
 
 }
