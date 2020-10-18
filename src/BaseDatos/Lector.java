@@ -22,7 +22,7 @@ public class Lector {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+	}
 	public static void Escribir() {
 
 		try {
