@@ -6,5 +6,3 @@ public interface Empleado {
 	String mostrarSalario();
 	
 }
-
-
