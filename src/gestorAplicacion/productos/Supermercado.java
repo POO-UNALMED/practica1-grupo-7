@@ -9,10 +9,13 @@ public class Supermercado {
 	private ArrayList<Producto> Products = new ArrayList<>();
 	public  ArrayList<String> Estadisticas= new ArrayList<>();
 	public ArrayList<Mensajero> Empleados=new ArrayList<>();
-	public Supermercado(String nombre, String direccion, String tel) {
+	public ArrayList<Usuario> Cajero=new ArrayList<>();
+	public Supermercado(String nombre, String direccion, String tel,ArrayList<Usuario> Cajeros,ArrayList<Mensajero> Mensajero) {
 		this.nombre = nombre;
 		this.direccion = direccion;
-		this.tel = tel;	
+		this.tel = tel;
+		this.Empleados=Mensajero;
+		this.Cajero=Cajeros;
 	}
 	public String getNombre() {
 		return nombre;
