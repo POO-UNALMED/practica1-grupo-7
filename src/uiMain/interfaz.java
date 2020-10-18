@@ -26,12 +26,41 @@ public class interfaz {
 			//CARGAR DATOS DEL SUPERMERCADO 4 A LA VARIABLE LOCAL SUPERM
 			break;
 		}
-		System.out.println("Por favor seleccione la operación que desea realizar en "+superm.getNombre()+": \n");
-		System.out.println("1. Realizar facturación de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar producto mas y menos vendido por el supermercado \n4. Finalizar operaciones");
+		System.out.println("Por favor seleccione la operacion que desea realizar: \n");
+		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar producto mas y menos vendido por el supermercado \n4. Finalizar operaciones");
 		int op1=scanner.nextInt();
 		switch (op1) {
 		case (1):
-			//AGREGAR TODOS LOS PRODUCTOS A FACTURAR SUMAR LOS PRECIOS Y TODO ESO
+			System.out.println("Porfavor seleccione la operacion que desea realizar: \n");
+		    System.out.println("1. Facturar un producto. \n2. Finalizar facturacion.");
+		    int op2=scanner.nextInt();
+		    switch (op2) {
+		    case (1):
+		    	System.out.println("Seleccione el tipo de producto que desea facturar:\n");
+		        System.out.println("1. Carnes. \n2. Lacteos. \n3.Vegetales. \n4. Tecnologia. ");
+		        int op3=scanner.nextInt();
+		        //AQUI OTRO SWITCH/CASE EN EL QUE DEPENDIENDO DEL TIPO ELEGIDO MOSTRAR LOS PRODUCTOS DE ESE TIPO Y DENTRO DE ESE OTRO PARA SELECCIONAR EL PRODUCTO, AHI SE USAN TODOS LOS METODOS NECESARIOS PARA EVALUAR EL PRECIO Y GUARDAR LOS DATOS Y OBJETOS CREADOS
+		        break;
+		    case (2):
+		    	System.out.println("No se facturo ningun producto.\nFinalizando operaciones\nGracias por usar nuestro sistema el dia de hoy, que tenga un buen dia y una prospera vida. ");
+		        break;
+		    }
+		    while(true) {
+		    	System.out.println("Por favor seleccione la operacion que desea realizar: \n");
+		    	System.out.println("1. Facturar otro producto. \n2. Finalizar facturacion.");
+		    	int op6=scanner.nextInt();
+		    	if (op6==2) {
+		    		break;
+		    	}
+		    	System.out.println("Seleccione el tipo de producto que desea facturar:\n");
+		        System.out.println("1. Carnes. \n2. Lacteos. \n3.Vegetales. \n4. Tecnologia. ");
+		        int op3=scanner.nextInt();
+		        //AQUI OTRO SWITCH/CASE EN EL QUE DEPENDIENDO DEL TIPO ELEGIDO MOSTRAR LOS PRODUCTOS DE ESE TIPO Y DENTRO DE ESE OTRO PARA SELECCIONAR EL PRODUCTO, AHI SE USAN TODOS LOS METODOS NECESARIOS PARA EVALUAR EL PRECIO Y GUARDAR LOS DATOS Y OBJETOS CREADOS
+		    }
+		    //AQUI IMPLEMNETAR FUNCIONALIDAD: REVISAR EL NUMERO DE VENTAS DEL SUPERMERCADO Y REALIZAR DESCUENTO SI DE CADA 4 COMPRAS ESTA ES LA CUARTA
+		    //AQUI IMPLEMENTAR FUNCIONALIDAD: REVISAR EL COSTO TOTAL DE LA COMPRA, SI ES MAS PEQUEÑA QUE UN X VALOR.AGREGAR PROPINA AL TOTAL
+		    //(OPCIONAL) AQUI MOSTRAR LA FACTURA COMPLETA DE SER ENCESARIO
+		    System.out.println("Gracias por usar nuestro sistema el dia de hoy, que tenga un buen dia y una prospera vida.");
 			break;
 		case (2):
 			//FUNCIONALIDAD: DE MOMENTO MOSTRAR AL EMPLEADO CON MAS FACTURAS
@@ -41,9 +70,9 @@ public class interfaz {
 			break;
 		case (4):
 			System.out.println("Gracias por usar nuestro sistema el dia hoy, que tenga un buen dia y una prospera vida");
-		    //AQUI GUARDAR TODOS LOS DATOS OTRA VEZ (AUNQUE EN ESTE CASO NO SE REALIZARON CAMBIOS), LAS VARIABLES LOCALES SE REINICAN CADA VEZ QUE SE EJECUTA EL MAIN ASI QUE NO AHY NECESIDAD DE INICIALIZARLAS
 		    break;
 		}
+		//AQUI GUARDAR TODO LOS OBJETOS DE NUEVO
 	}
 
 }
