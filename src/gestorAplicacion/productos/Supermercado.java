@@ -10,8 +10,8 @@ public class Supermercado {
 	private String tel;
 	private ArrayList<Producto> Products = new ArrayList<>();
 	public  ArrayList<String> Estadisticas= new ArrayList<>();
-	public ArrayList<Mensajero> Empleados=new ArrayList<>();
-	public ArrayList<Usuario> Cajero=new ArrayList<>();
+	public ArrayList<Mensajero> Empleados;
+	public ArrayList<Usuario> Cajero;
 	public Supermercado(String nombre, String direccion, String tel,ArrayList<Usuario> Cajeros,ArrayList<Mensajero> Mensajero) {
 		this.nombre = nombre;
 		this.direccion = direccion;

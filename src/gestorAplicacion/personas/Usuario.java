@@ -8,7 +8,7 @@ public class Usuario extends Persona implements Empleado{
 	public static final int salario_cajero=75000;
 	public  ArrayList <Compra> Compras = new ArrayList<Compra>();
 	private static int totalUsuarios=0;
-	Usuario(String nombre,String id,String genero,String direccion,String telFijo,String numCelular,int Caja){
+	public Usuario(String nombre,String id,String genero,String direccion,String telFijo,String numCelular,int Caja){
 		super(nombre,id,genero,direccion,telFijo,numCelular);
 		this.caja=Caja;
 		setTotalUsuarios(getTotalUsuarios()+1);
