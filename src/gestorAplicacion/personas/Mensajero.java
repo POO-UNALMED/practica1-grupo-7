@@ -1,7 +1,7 @@
 package gestorAplicacion.personas;
 import gestorAplicacion.productos.*;
 import java.util.*;
-public class Mensajero extends Persona {
+public class Mensajero extends Persona implements Empleado{
 	public String transporte;
 	public int contador;
 	public int gan_adicional;
@@ -54,5 +54,15 @@ public class Mensajero extends Persona {
 		int bono=5000*bonomult;
 		return bono;
 	}
+	@Override
+	public String mostrarCargo() {
+		return this.nombre+" es un mensajero";
+	}
+	@Override
+	public String mostrarSalario() {
+		return this.nombre+" tiene un sueldo de $900.000";
+	}
+	
+	
 
 }

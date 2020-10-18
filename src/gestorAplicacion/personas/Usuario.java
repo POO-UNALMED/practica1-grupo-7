@@ -2,7 +2,7 @@ package gestorAplicacion.personas;
 import java.util.ArrayList;
 import gestorAplicacion.productos.*;
 
-public class Usuario extends Persona{
+public class Usuario extends Persona implements Empleado{
 	private String nomUsuario;
 	private String contrasena;
 	public int Caja;
@@ -39,7 +39,15 @@ public class Usuario extends Persona{
 	public void setCompras(ArrayList<Compra> compras) {
 		Compras = compras;
 	}
+	@Override
+	public String mostrarCargo() {
+		return this.nombre+" es un cajero";
+	}
+	@Override
+	public String mostrarSalario() {		
+		return this.nombre+" tiene un salario de $1'200.000";
+	}
 	
-		
+			
 	
 }
