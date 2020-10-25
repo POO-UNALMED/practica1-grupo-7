@@ -69,27 +69,49 @@ public class Supermercado {
 	public Mensajero MejorMensajero() {
 		Mensajero mejorEmpleado=null;
 		int mayor=0;
+		boolean empate=false;
 		for (Mensajero m:Empleados) {
 			int cantidadFact=m.facturas.size();
 			if (cantidadFact>mayor) {
+				empate=false;
 				mayor=cantidadFact;
 				mejorEmpleado=m;
 			}
+			if(cantidadFact==mayor){
+			    empate=true;
+			}
 		}
-		return mejorEmpleado;
+		if (empate==true) {
+			return null;
+		}
+		else{
+			return mejorEmpleado;
+		}
+
 	}
 	//3ERA FUNCIONALIDAD
 	public Mensajero MensajeroConMasQuejas() {
 		Mensajero PeorEmpleado=null;
 		int mayorquejas=0;
+		boolean empateQuejas=false;
 		for (Mensajero m:Empleados) {
 			int tamañoquejas=m.Quejas.size();
 			if (tamañoquejas>mayorquejas) {
+				empateQuejas=false;
 				mayorquejas=tamañoquejas;
 				PeorEmpleado=m;
 			}
+			if(tamañoquejas==mayorquejas){
+			    empateQuejas=true;
+			}
 		}
-		return PeorEmpleado;
+		if (empateQuejas==true) {
+			return null;
+		}
+		else{
+			return PeorEmpleado;
+		}
+		
 	}
 }
 
