@@ -19,7 +19,7 @@ public class interfaz {
 		//DEPENDIENDO DEL NUMERO INGRESADO EN SUP ALMACENAR EL SUPERMERCADO CON INDICE DE LISTA == SUP EN LA VARIABLE LOCAL SUPERMERCADO
 		//SEPARAR TODO LOS PRODUCTOS DEL SUPERMERCADO Y AÑADIR SU APUNTADOR A LAS LISTAS DE CADA TIPO
 		System.out.println("Por favor seleccione la operacion que desea realizar: \n");
-		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar producto mas y menos vendido por el supermercado \n4. Finalizar operaciones");
+		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3.Mostrar empleado con mas quejas del supermercado \n4. Mostrar producto mas y menos vendido por el supermercado \n5. Finalizar operaciones");
 		int op1=scanner.nextInt();
 		switch (op1) {
 		case (1):
@@ -197,8 +197,6 @@ public class interfaz {
 		            break;
 		            }
 		    }
-		    //AQUI IMPLEMNETAR FUNCIONALIDAD: REVISAR EL NUMERO DE VENTAS DEL SUPERMERCADO Y REALIZAR DESCUENTO SI DE CADA 4 COMPRAS ESTA ES LA CUARTA
-		    //AQUI IMPLEMENTAR FUNCIONALIDAD: REVISAR EL COSTO TOTAL DE LA COMPRA, SI ES MAS PEQUEÑA QUE UN X VALOR.AGREGAR PROPINA AL TOTAL
 		    //(OPCIONAL) AQUI MOSTRAR LA FACTURA COMPLETA DE SER ENCESARIO
 		    System.out.println("Gracias por usar nuestro sistema el dia de hoy, que tenga un buen dia y una prospera vida. \n");
 			break;
@@ -211,13 +209,20 @@ public class interfaz {
 			}
 			break;
 		case (3):
-			System.out.println("En el supermercado "+superm.getNombre()+"el producto mas vendido hasta ahora ha sido: "+superm.prodMasPopular()+";mientras que el menos vendido a sido: "+superm.prodMenosPopular()+"\n");
+			if (superm.MensajeroConMasQuejas()==null) {
+				System.out.println("Debido a empates o falta de ventas, aun no se ha determinado al empleado con mas quejas del supermercado \n");
+			}
+			else {
+				System.out.println("El mejor empleado del supermercado "+superm.getNombre()+"es "+superm.MejorMensajero().getNombre()+"\n");
+			}
 			break;
 		case (4):
+			System.out.println("En el supermercado "+superm.getNombre()+"el producto mas vendido hasta ahora ha sido: "+superm.prodMasPopular()+";mientras que el menos vendido a sido: "+superm.prodMenosPopular()+"\n");
+		break;
+		case (5):
 			System.out.println("Gracias por usar nuestro sistema el dia hoy, que tenga un buen dia y una prospera vida \n");
-		    break;
+	    break;
 		}
 		//AQUI GUARDAR TODO LOS OBJETOS DE NUEVO
 	}
-
 }
