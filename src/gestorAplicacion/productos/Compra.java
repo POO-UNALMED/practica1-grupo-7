@@ -37,7 +37,9 @@ public class Compra {
 	}
 	public void agregar(Producto pro,int cant,Supermercado superm) {
 		if (pro.comprobarStock(pro,cant)==true) {
-			superm.Estadisticas.add(pro.nom_producto);
+			for (int i=0;i==cant;i++) {
+				superm.Estadisticas.add(pro.nom_producto);
+			}
 			fact.subTotal_detallefac+=pro.precio*cant;
 			sumValorAgregado+=pro.valorAgregado();
 			pro.stock-=cant;		

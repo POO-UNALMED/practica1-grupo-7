@@ -32,8 +32,13 @@ public class Usuario extends Persona implements Empleado{
 				   this.telFijo+", y numero adicional "+this.numCelular+"atiende en la caja"+
 				   this.caja+" y tiene con un sueldo de "+this.salario_cajero;
 	}
-	public void Quejarse() {
-		
+	//3ERA FUNCIONALIDAD
+	public void Quejarse(Compra compra,String queja) {
+		for (int i=0;i<Compras.size();i++) {
+			if (compra==Compras.get(i)) {
+				Compras.get(i).menID.Quejas.add(queja);
+			}
+		}
 	}
 		
 }
