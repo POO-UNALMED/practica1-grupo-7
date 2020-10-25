@@ -40,7 +40,7 @@ public class Supermercado {
 			System.out.println("hay"+i.stock+"del producto"+i.nom_producto);
 		}
 	}
-	//FUNCIONALIDAD 2
+	//FUNCIONALIDAD 2 (IMPLEMENTADA)
 	public String prodMasPopular(){
 		String prodPop="";
 		int mayorveces = 0;
@@ -65,7 +65,7 @@ public class Supermercado {
 		}
 		return prodNoPop;
 	}
-	//5TA FUNCIONALIDAD
+	//5TA FUNCIONALIDAD (IMPLIMENTADA)
 	public Mensajero MejorMensajero() {
 		Mensajero mejorEmpleado=null;
 		int mayor=0;

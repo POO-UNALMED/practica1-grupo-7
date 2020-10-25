@@ -50,10 +50,10 @@ public class interfaz {
 		    System.out.println("Gracias por usar nuestro sistema el dia de hoy, que tenga un buen dia y una prospera vida.");
 			break;
 		case (2):
-			System.out.println("El empleado mas valioso del supermercado "+superm.getNombre()+"es "+MejorMensajero().getNombre());
+			System.out.println("El empleado mas valioso del supermercado "+superm.getNombre()+"es "+superm.MejorMensajero().getNombre());
 			break;
 		case (3):
-			//FUNCIONALIDAD: DE MOEMNTO MOSTRAR EL PRODUCTO MAS Y MENOS VENDIDO
+			System.out.println("En el supermercado "+superm.getNombre()+"el producto mas vendido hasta ahora ha sido: "+superm.prodMasPopular()+";mientras que el menos vendido a sido: "+superm.prodMenosPopular());
 			break;
 		case (4):
 			System.out.println("Gracias por usar nuestro sistema el dia hoy, que tenga un buen dia y una prospera vida");
