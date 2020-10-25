@@ -10,22 +10,9 @@ public class interfaz {
 		Scanner scanner = new Scanner(System.in);
 		Supermercado superm=null;
 		System.out.println("Bienvenido al sistema de compra de productos:"+"\n"+"\n"+"Por favor escoja el supermercado donde se relizo la orden:."+"\n"+"\n");
-		System.out.println("1. Supermercado 1"+"\n"+"2. Supermercado 2"+"\n"+"3. Supermercado"+"\n"+"4. Supermercado");
+		//RECORRER LISTA DE SUPERMERCADOS IMPRIMIENDO EL NOMBRE A CADO UNO POR MEDIO DE UN FOR PARA MOSTRARLOS TODOS
 		int sup= scanner.nextInt();
-		switch (sup) {
-		case (1):
-			//CARGAR DATOS DEL SUPERMERCADO 1 A LA VARIABLE LOCAL SUPERM
-			break;
-		case (2):
-			//CARGAR DATOS DEL SUPERMERCADO 2 A LA VARIABLE LOCAL SUPERM
-			break;
-		case (3):
-			//CARGAR DATOS DEL SUPERMERCADO 3 A LA VARIABLE LOCAL SUPERM
-			break;
-		case (4):
-			//CARGAR DATOS DEL SUPERMERCADO 4 A LA VARIABLE LOCAL SUPERM
-			break;
-		}
+		//DEPENDIENDO DEL NUMERO INGRESADO EN SUP ALMACENAR EL SUPERMERCADO CON INDICE DE LISTA == SUP EN LA VARIABLE LOCAL SUPERMERCADO
 		System.out.println("Por favor seleccione la operacion que desea realizar: \n");
 		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar producto mas y menos vendido por el supermercado \n4. Finalizar operaciones");
 		int op1=scanner.nextInt();
@@ -63,7 +50,7 @@ public class interfaz {
 		    System.out.println("Gracias por usar nuestro sistema el dia de hoy, que tenga un buen dia y una prospera vida.");
 			break;
 		case (2):
-			//FUNCIONALIDAD: DE MOMENTO MOSTRAR AL EMPLEADO CON MAS FACTURAS
+			System.out.println("El empleado mas valioso del supermercado "+superm.getNombre()+"es "+MejorMensajero().getNombre());
 			break;
 		case (3):
 			//FUNCIONALIDAD: DE MOEMNTO MOSTRAR EL PRODUCTO MAS Y MENOS VENDIDO
