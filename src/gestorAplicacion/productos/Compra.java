@@ -58,20 +58,12 @@ public class Compra {
 			total+=10000;
 			propinabool=false;
 		}
-		//3ERA FUNCIONALIDAD
 		user.Compras.add(this);
-		if (user.Compras.size()%3==0) {
-			total=total*0.85;
-			System.out.println("Se ha efectuado un descuento a su compra");
-			return new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this);
-		}
-		
-		else {
-			return new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this);	
+		return new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this);	
 		}
 	}
 	
 	
 	
 
-}
+

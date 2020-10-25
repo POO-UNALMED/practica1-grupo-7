@@ -66,7 +66,7 @@ public class Supermercado {
 		return prodNoPop;
 	}
 	//5TA FUNCIONALIDAD
-	public Mensajero EmpleadoDelMes() {
+	public Mensajero MejorMensajero() {
 		Mensajero mejorEmpleado=null;
 		int mayor=0;
 		for (Mensajero m:Empleados) {

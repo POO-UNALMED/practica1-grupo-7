@@ -53,7 +53,7 @@ public class Mensajero extends Persona implements Empleado{
 		for (int i=0;i<facturas.size();i++) {
 			salario_mensajero+=facturas.get(i).total*0.05;
 		}
-		if (mensajero==superm.EmpleadoDelMes()) {
+		if (mensajero==superm.MejorMensajero()) {
 			return salario_mensajero+=propina+bonoFactura()+100000;
 		}
 		else {
