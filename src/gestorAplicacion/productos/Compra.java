@@ -48,7 +48,7 @@ public class Compra {
 			System.out.println("El producto se encuentra agotado");
 		}
 	}
-	public Factura efectuarCompra(String banco,Compra compra,Producto pro) {
+	public Factura efectuarCompra(String banco,Compra compra) {
 		contadoridf++;
 		//1ERA FUNCIONALIDAD
 		if (fact.subTotal_detallefac<20000) {
