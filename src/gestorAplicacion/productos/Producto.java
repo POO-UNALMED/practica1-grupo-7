@@ -1,19 +1,18 @@
 package gestorAplicacion.productos;
 
-abstract class Producto {
+public abstract class Producto {
 	public String id_producto;
 	public int precio;
 	public String nom_producto;
 	public int stock;
 	public String tipo_producto;
-	public static int totalProductos=0;
+
 	public Producto(String id_producto, int precio, String nom_producto, int stock, String tipo_producto) {
 		this.id_producto = id_producto;
 		this.precio = precio;
 		this.nom_producto = nom_producto;
 		this.stock = stock;
-		this.tipo_producto = tipo_producto;
-		setTotalProductos(getTotalProductos()+1);	
+		this.tipo_producto = tipo_producto;	
 	}
 	public String getId_producto() {
 		return id_producto;
@@ -46,12 +45,7 @@ abstract class Producto {
 		this.tipo_producto = tipo_producto;
 	}	
 	
-	public static int getTotalProductos() {
-		return totalProductos;
-	}
-	public static void setTotalProductos(int totalProductos) {
-		Producto.totalProductos = totalProductos;
-	}
+
 	public void reStock(int cantidad) {
 		this.stock+=cantidad;
 	}
