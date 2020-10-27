@@ -11,11 +11,12 @@ public class Mensajero extends Persona implements Empleado{
 	public Supermercado superm;
 	public ArrayList <Factura> facturas=new ArrayList <Factura>();
 	public ArrayList<String> Quejas=new ArrayList<>();
-	public Mensajero(String nombre, String id,String genero,String direccion,String telFijo,String numCelular,String transporte, int contador, int gan_adicional) {
+	public Mensajero(String nombre, String id,String genero,String direccion,String telFijo,String numCelular,String transporte, int contador, int gan_adicional,Supermercado superm) {
 		super(nombre,id,genero,direccion,telFijo,numCelular);
 		this.transporte = transporte;
 		this.contador = contador;
 		this.gan_adicional = gan_adicional;
+		this.superm=superm;
 		superm.Empleados.add(this);
 	}
 	public String getTransporte() {
