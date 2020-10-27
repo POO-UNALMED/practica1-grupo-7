@@ -18,7 +18,7 @@ public class interfaz {
 		//DEPENDIENDO DEL NUMERO INGRESADO EN SUP ALMACENAR EL SUPERMERCADO CON INDICE DE LISTA == SUP EN LA VARIABLE LOCAL SUPERMERCADO
 		//SEPARAR TODO LOS PRODUCTOS DEL SUPERMERCADO Y AÑADIR SU APUNTADOR A LAS LISTAS DE CADA TIPO
 		System.out.println("Por favor seleccione la operacion que desea realizar: \n");
-		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3.Mostrar empleado con mas quejas del supermercado \n4. Mostrar producto mas y menos vendido por el supermercado \n5. Finalizar operaciones");
+		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3.Mostrar empleado con mas quejas del supermercado. \n4. Mostrar producto mas y menos vendido por el supermercado. \n5. Agregar producto al inventario del supermercado. \n6.Finalizar operacion.");
 		int op1=scanner.nextInt();
 		switch (op1) {
 		case (1):
@@ -39,7 +39,7 @@ public class interfaz {
 		        	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<carnes.size();x++) {
-		            	System.out.println((x+1)+". "+carnes.get(x));
+		            	System.out.println((x+1)+". "+carnes.get(x).nom_producto);
 		            }
 		            int car=scanner.nextInt();
 		            producto_car=carnes.get(car);
@@ -60,7 +60,7 @@ public class interfaz {
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<lacteos.size();x++) {
-		            	System.out.println((x+1)+". "+lacteos.get(x));
+		            	System.out.println((x+1)+". "+lacteos.get(x).nom_producto);
 		            }
 		            int lac=scanner.nextInt();
 		            producto_lac=lacteos.get(lac);
@@ -81,7 +81,7 @@ public class interfaz {
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<vegetales.size();x++) {
-		            	System.out.println((x+1)+". "+vegetales.get(x));
+		            	System.out.println((x+1)+". "+vegetales.get(x).nom_producto);
 		            }
 		            int veg=scanner.nextInt();
 		            producto_veg=vegetales.get(veg);
@@ -102,7 +102,7 @@ public class interfaz {
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<tecnologia.size();x++) {
-		            	System.out.println((x+1)+". "+tecnologia.get(x));
+		            	System.out.println((x+1)+". "+tecnologia.get(x).nom_producto);
 		            }
 		            int tec=scanner.nextInt();
 		            producto_tec=tecnologia.get(tec);
@@ -137,7 +137,7 @@ public class interfaz {
 		        	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<carnes.size();x++) {
-		            	System.out.println((x+1)+". "+carnes.get(x));
+		            	System.out.println((x+1)+". "+carnes.get(x).nom_producto);
 		            }
 		            int car=scanner.nextInt();
 		            producto_car=carnes.get(car);
@@ -158,7 +158,7 @@ public class interfaz {
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<lacteos.size();x++) {
-		            	System.out.println((x+1)+". "+lacteos.get(x));
+		            	System.out.println((x+1)+". "+lacteos.get(x).nom_producto);
 		            }
 		            int lac=scanner.nextInt();
 		            producto_lac=lacteos.get(lac);
@@ -179,7 +179,7 @@ public class interfaz {
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<vegetales.size();x++) {
-		            	System.out.println((x+1)+". "+vegetales.get(x));
+		            	System.out.println((x+1)+". "+vegetales.get(x).nom_producto);
 		            }
 		            int veg=scanner.nextInt();
 		            producto_veg=vegetales.get(veg);
@@ -200,7 +200,7 @@ public class interfaz {
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<tecnologia.size();x++) {
-		            	System.out.println((x+1)+". "+tecnologia.get(x));
+		            	System.out.println((x+1)+". "+tecnologia.get(x).nom_producto);
 		            }
 		            int tec=scanner.nextInt();
 		            producto_tec=tecnologia.get(tec);
@@ -235,8 +235,35 @@ public class interfaz {
 			System.out.println("En el supermercado "+superm.getNombre()+"el producto mas vendido hasta ahora ha sido: "+superm.prodMasPopular()+";mientras que el menos vendido a sido: "+superm.prodMenosPopular()+"\n");
 		break;
 		case (5):
-			System.out.println("Gracias por usar nuestro sistema el dia hoy, que tenga un buen dia y una prospera vida \n");
+			System.out.println("Indique que tipo de producto desea agregar al inventario: \n");
+		    System.out.println("1. Carne. \n2. Lacteo. \n3.Vegetal. \n4. Tecnologia. \n");
+		    int tipo=scanner.nextInt();
+		    switch(tipo) {
+		    case(1):
+		    	System.out.println("Ingrese el nombre del producto que desea añadir: \n");
+		        String producto=scanner.next();
+		        System.out.println("Ingrese la cantadidad de "+producto+" que desea añadir: \n");
+		        int cant=scanner.nextInt();
+		        for (int x=0;x<carnes.size();x++) {
+		        	if (carnes.get(x).nom_producto.toLowerCase()==producto.toLowerCase()) {
+		        		carnes.get(x).stock+=cant;
+		        		System.out.println("El producto ya se encontraba en el inventario, se agrego la cantidad al stock del producto. \n");
+		        		break;
+		        	}
+		        }
+		        System.out.println("Ingrese el id del producto que desea añadir: \n");
+		        String id=scanner.next();
+		        System.out.println("Ingrese el precio de venta del producto que desea añadir: \n");
+		        int pre=scanner.nextInt();
+		        System.out.println("ingrese el peso del producto que dea añadir: \n");
+		        int pes=scanner.nextInt();
+		        superm.AgregarProdCarnes(id, pre, producto, cant,pes);
+		    break;
+		    }
 	    break;
+		case (6):
+			System.out.println("Gracias por usar nuestro sistema el dia hoy, que tenga un buen dia y una prospera vida \n");
+		break;
 		}
 		//AQUI GUARDAR TODO LOS OBJETOS DE NUEVO
 	}
