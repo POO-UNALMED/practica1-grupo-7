@@ -15,7 +15,7 @@ public class Factura {
 	public  Supermercado superm;
 	Compra compra;
 	public  ArrayList <DetalleFactura> productList = new ArrayList<DetalleFactura>();
-    public Factura(Mensajero idM,int idFac,Usuario user,double total,double iva,double subTotal,String banco,Compra compra) {
+    public Factura(Mensajero idM,int idFac,Usuario user,double total,double iva,double subTotal,String banco,Compra compra,ArrayList<DetalleFactura> productlist) {
     	this.idMen=idM;
     	this.idFactura=idFac;
     	this.user=user;
@@ -25,6 +25,7 @@ public class Factura {
     	this.banco=banco;
     	this.compra=compra;
     	this.idMen.facturas.add(this);
+    	this.productList=productlist;
     }
 	public Mensajero getIdMen() {
 		return idMen;
