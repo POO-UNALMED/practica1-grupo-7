@@ -36,8 +36,30 @@ public class Compra {
 		Compra.totalCompra = totalCompra;
 	}
 	public void agregar(Producto pro,int cant,Supermercado superm) {
+		//ULTIMA FUNCIONALIDAD
+		if (pro instanceof Tecnologia) {
+			if(pro.precio>1000000) {
+				System.out.println("Por su compra de "+pro.nom_producto+" se le ha dado una chance de usar la ruleta de la suerte");
+				if(Tecnologia.GirarRuleta()==true) {
+					System.out.println("Enhorabuena!! Has ganado la ruleta y por esto se le ha regalado un celular Xiaomi");
+					Tecnologia CelularX=new Tecnologia();
+					if (CelularX.comprobarStock(pro,cant)==true) {
+						for (int i=0;i<cant;i++) {
+							superm.Estadisticas.add(CelularX.nom_producto);
+						}
+					}
+						else {
+							System.out.println("El producto se encuentra agotado");
+						}
+					
+				}
+				else {
+					System.out.println("Lamentablemente hoy no fue tu dia de suerte, intentalo otra vez en otro tiempo");
+				}
+			}
+		}
 		if (pro.comprobarStock(pro,cant)==true) {
-			for (int i=0;i==cant;i++) {
+			for (int i=0;i<cant;i++) {
 				superm.Estadisticas.add(pro.nom_producto);
 			}
 			fact.subTotal_detallefac+=pro.precio*cant;
