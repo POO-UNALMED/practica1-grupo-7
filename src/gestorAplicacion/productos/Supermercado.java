@@ -20,16 +20,14 @@ public class Supermercado {
 		this.Cajero=Cajeros;
 		Lector.getListaObjetos().add(this);
 	}
-	public ArrayList<Producto> getProducts() {
+    public ArrayList<Producto> getProducts() {
 		return Products;
 	}
 
-=======
-	public void setProducts(ArrayList<Producto> products) {
+    public void setProducts(ArrayList<Producto> products) {
 		Products = products;
 	}
->>>>>>> c336dad2cc008928a09a9384f6db42d440c98cb8
-	public String getNombre() {
+    public String getNombre() {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
