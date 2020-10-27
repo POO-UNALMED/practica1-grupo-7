@@ -16,6 +16,7 @@ public class Compra implements Serializable {
 	public boolean propinabool=false;
 	public double sumValorAgregado=0;
 	public ArrayList<DetalleFactura>DetalleFacturaList=new ArrayList<>();
+	public double subtotal_fact;
 	public Compra(Usuario user,Factura fac,Mensajero menID,Supermercado superm){
 		this.user=user;
 		this.fact=fac;
@@ -67,11 +68,10 @@ public class Compra implements Serializable {
 			for (int i=0;i<cant;i++) {
 				superm.Estadisticas.add(pro.nom_producto);
 			}
-			fact.subTotal_detallefac+=pro.precio*cant;
+			subtotal_fact+=pro.precio*cant;
 			sumValorAgregado+=pro.valorAgregado();
 			pro.stock-=cant;
-			Factura facturanull=null;
-			DetalleFactura item=new DetalleFactura(facturanull,pro,cant,pro.precio*cant);
+			DetalleFactura item=new DetalleFactura(fact,pro,cant,pro.precio*cant);
 			DetalleFacturaList.add(item);
 		}
 		else {
@@ -81,17 +81,17 @@ public class Compra implements Serializable {
 	public Factura efectuarCompra(String banco) {
 		contadoridf++;
 		//1ERA FUNCIONALIDAD(IMPLEMENTADA)
-		if (fact.subTotal_detallefac<20000) {
+		if (subtotal_fact<20000) {
 			menID.propina+=10000;
 			propinabool=true;
 		}
-		double total=sumValorAgregado+fact.subTotal_detallefac;
+		double total=sumValorAgregado+subtotal_fact;
 		if (propinabool=true) {
 			total+=10000;
 			propinabool=false;
 		}
 		user.Compras.add(this);
-		Factura fact_id=new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this,DetalleFacturaList);
+		Factura fact_id=new Factura(menID,contadoridf,user,total,sumValorAgregado,subtotal_fact,banco,this,DetalleFacturaList);
 		menID.facturas.add(fact_id);
 		for (int i=0;i<DetalleFacturaList.size();i++) {
 			DetalleFacturaList.get(i).setId_factura(fact_id);
