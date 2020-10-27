@@ -27,13 +27,15 @@ public class casoBase {
 		String[] dirSupGenericos= new String[] {"Av 89 No 20 12", "Calle 102 No 10 39", "Carrera 209B No 12 43","Av No 30 28"};
 		String[] telSupGenericos= new String[] {"7455444", "6041919", "4891222", "3117979"};
 		for(int i=0; i<4;i++) {
+
 			 ArrayList<Mensajero> mensajeros=new ArrayList<>();
 			 ArrayList<Usuario> cajeros=new ArrayList<>();
 			 ArrayList<Producto> productos= new ArrayList<>();	
+			 Supermercado supp=new Supermercado(nomSupGenericos[i],dirSupGenericos[i],telSupGenericos[i],cajeros, mensajeros);
 			for(int k=0; k<4;i++) {
-				mensajeros.add(new Mensajero(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
-						telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],transportesGenericos[(int) Math.floor(Math.random()*12+1)],0,0));
-				cajeros.add(new Usuario(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
+				new Mensajero(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
+						telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],transportesGenericos[(int) Math.floor(Math.random()*12+1)],0,0,supp);
+				supp.Cajero.add(new Usuario(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
 						telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],i));			
 			}
 			for(int k=0;k<5;k++) {
@@ -56,7 +58,8 @@ public class casoBase {
 				}
 				
 			}
-			Lector.getListaObjetos().add(new Supermercado(nomSupGenericos[i],dirSupGenericos[i],telSupGenericos[i],cajeros, mensajeros));
+			supp.setProducts(productos);
+			Lector.getListaObjetos().add(supp);
 		}
 	}
 }

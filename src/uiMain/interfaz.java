@@ -8,15 +8,32 @@ public class interfaz {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Supermercado superm=null;
+		ArrayList<Supermercado>supermercados=Lector.getListaObjetos();
 		ArrayList<Carnes>carnes=new ArrayList<Carnes>();
 		ArrayList<Lacteos>lacteos=new ArrayList<Lacteos>();
 		ArrayList<Vegetales>vegetales=new ArrayList<Vegetales>();
 		ArrayList<Tecnologia>tecnologia=new ArrayList<Tecnologia>();
 		System.out.println("Bienvenido al sistema de compra de productos:"+"\n"+"\n"+"Por favor escoja el supermercado donde se relizo la orden:."+"\n"+"\n");
-		//RECORRER LISTA DE SUPERMERCADOS IMPRIMIENDO EL NOMBRE A CADO UNO POR MEDIO DE UN FOR PARA MOSTRARLOS TODOS
+		for (int x=0;x<supermercados.size();x++) {
+        	System.out.println((x+1)+". "+supermercados.get(x).getNombre());
+        }
 		int sup= scanner.nextInt();
-		//DEPENDIENDO DEL NUMERO INGRESADO EN SUP ALMACENAR EL SUPERMERCADO CON INDICE DE LISTA == SUP EN LA VARIABLE LOCAL SUPERMERCADO
-		//SEPARAR TODO LOS PRODUCTOS DEL SUPERMERCADO Y AÑADIR SU APUNTADOR A LAS LISTAS DE CADA TIPO
+		superm=supermercados.get(sup);
+		for (int x=0;x<superm.getProducts().size();x++) {
+			Producto pro=superm.getProducts().get(x);
+			if (pro instanceof Carnes) {
+				carnes.add((Carnes) pro);
+			}
+			else if(pro instanceof Lacteos) {
+				lacteos.add((Lacteos)pro);
+			}
+			else if(pro instanceof Vegetales) {
+				vegetales.add((Vegetales)pro);
+			}
+			else if(pro instanceof Tecnologia) {
+				tecnologia.add((Tecnologia)pro);
+			}
+		}
 		System.out.println("Por favor seleccione la operacion que desea realizar: \n");
 		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3.Mostrar empleado con mas quejas del supermercado. \n4. Mostrar producto mas y menos vendido por el supermercado. \n5. Agregar producto al inventario del supermercado. \n6.Finalizar operacion.");
 		int op1=scanner.nextInt();
