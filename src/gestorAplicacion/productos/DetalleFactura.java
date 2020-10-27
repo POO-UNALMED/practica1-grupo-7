@@ -14,7 +14,6 @@ public class DetalleFactura implements Serializable {
 		this.id_producto = id_producto;
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
-		this.id_factura.productList.add(this);
 		
 	}
 	public Factura getId_factura() {

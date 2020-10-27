@@ -30,6 +30,7 @@ public class Factura implements Serializable{
     	this.compra=compra;
     	this.idMen.facturas.add(this);
     	this.productList=productlist;
+
     }
 	public Mensajero getIdMen() {
 		return idMen;

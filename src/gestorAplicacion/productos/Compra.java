@@ -71,7 +71,8 @@ public class Compra implements Serializable {
 			subtotal_fact+=pro.precio*cant;
 			sumValorAgregado+=pro.valorAgregado();
 			pro.stock-=cant;
-			DetalleFactura item=new DetalleFactura(fact,pro,cant,pro.precio*cant);
+			Factura facteje=null;
+			DetalleFactura item=new DetalleFactura(facteje,pro,cant,pro.precio*cant);
 			DetalleFacturaList.add(item);
 		}
 		else {
