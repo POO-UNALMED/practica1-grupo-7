@@ -18,7 +18,7 @@ public class Supermercado {
 		this.tel = tel;
 		this.Empleados=Mensajero;
 		this.Cajero=Cajeros;
-		Lector.listaObjetos.add(this);
+		Lector.getListaObjetos().add(this);
 	}
 	public String getNombre() {
 		return nombre;

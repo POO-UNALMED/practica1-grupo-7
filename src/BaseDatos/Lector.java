@@ -10,7 +10,13 @@ public class Lector {
 	private static OutputStream f;
 	private static InputStream f1;
 	private static ObjectInputStream o1; 
-	public static ArrayList<Supermercado> listaObjetos=new ArrayList<>();
+	private static ArrayList<Supermercado> listaObjetos=new ArrayList<>();
+	public static ArrayList<Supermercado> getListaObjetos() {
+		return listaObjetos;
+	}
+	public static void setListaObjetos(ArrayList<Supermercado> listaObjetos) {
+		Lector.listaObjetos = listaObjetos;
+	}
 	{
 		File decoy=new File("");
 		try {
