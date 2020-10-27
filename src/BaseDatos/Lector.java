@@ -25,8 +25,15 @@ public class Lector implements Serializable{
 		try {
 			path = Files.createDirectory(Paths.get(decoy.getAbsolutePath()+"\\src\\BaseDatos").resolve("temp"));
 			path= Files.createFile(path.resolve("Objetos.txt"));
+			casoBase.crearObjetos();
+			for (Supermercado e:listaObjetos) {
+				System.out.println(e.getNombre());
+			}
+			Escribir();
+			System.out.println("ff'nt");
 		} catch (IOException e) {
 			path=Paths.get(decoy.getAbsolutePath()+"\\src\\BaseDatos\\temp\\Objetos.txt");
+			System.out.println("ff");
 		}		
 	}
 	public static void Leer() {

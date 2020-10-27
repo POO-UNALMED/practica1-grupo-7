@@ -4,8 +4,8 @@ import gestorAplicacion.productos.*;
 import gestorAplicacion.personas.*;
 import BaseDatos.*;
 public class interfaz {
-	//AQUI CARGAR TODOS LOS OBJETOS
 	public static void main(String[] args) {
+		Lector.Leer();
 		Scanner scanner = new Scanner(System.in);
 		Supermercado superm=null;
 		ArrayList<Supermercado>supermercados=Lector.getListaObjetos();
@@ -13,7 +13,7 @@ public class interfaz {
 		ArrayList<Lacteos>lacteos=new ArrayList<Lacteos>();
 		ArrayList<Vegetales>vegetales=new ArrayList<Vegetales>();
 		ArrayList<Tecnologia>tecnologia=new ArrayList<Tecnologia>();
-		System.out.println("Bienvenido al sistema de compra de productos:"+"\n"+"\n"+"Por favor escoja el supermercado donde se relizo la orden:."+"\n"+"\n");
+		System.out.println("Bienvenido al sistema de compra de productos:"+"\n"+"\n"+"Por favor escoja el supermercado donde se relizo la orden: "+"\n"+"\n");
 		for (int x=0;x<supermercados.size();x++) {
         	System.out.println((x+1)+". "+supermercados.get(x).getNombre());
         }
@@ -360,6 +360,6 @@ public class interfaz {
 			System.out.println("Gracias por usar nuestro sistema el dia hoy, que tenga un buen dia y una prospera vida \n");
 		break;
 		}
-		//AQUI GUARDAR TODO LOS OBJETOS DE NUEVO
+		Lector.Escribir();
 	}
 }
