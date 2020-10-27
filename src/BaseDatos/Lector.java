@@ -20,17 +20,19 @@ public class Lector {
 		File decoy=new File("");
 		try {
 			path = Files.createDirectory(Paths.get(decoy.getAbsolutePath()+"\\src\\BaseDatos").resolve("temp"));
+			path= Files.createFile(path.resolve("Objetos.txt"));
 		} catch (IOException e) {
-			System.out.println("f");
+			path=Paths.get(decoy.getAbsolutePath()+"\\src\\BaseDatos\\temp\\Objetos.txt");
 		}		
 	}
 	public static void Leer() {
 		try {
-			f1 = Files.newInputStream(Paths.get(path.toString()+"Objetos.txt"),StandardOpenOption.READ);
+			f1 = Files.newInputStream(path,StandardOpenOption.READ);
 			o1 =new ObjectInputStream(f1);
 			Supermercado sup;
 			do {
-				sup= (Supermercado) o1.readObject();				
+				sup= (Supermercado) o1.readObject();
+				listaObjetos.add(sup);
 			}
 			while(o1!=null);
 		} catch (IOException e) {
@@ -43,7 +45,7 @@ public class Lector {
 	public static void Escribir() {
 
 		try {
-			f = Files.newOutputStream(Paths.get(path.toString()+"Objetos.txt"),StandardOpenOption.WRITE);
+			f = Files.newOutputStream(path,StandardOpenOption.WRITE);
 			o= new ObjectOutputStream(f);
 			for (Supermercado i: listaObjetos) {
 				o.writeObject(i);
