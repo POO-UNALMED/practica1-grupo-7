@@ -241,23 +241,84 @@ public class interfaz {
 		    switch(tipo) {
 		    case(1):
 		    	System.out.println("Ingrese el nombre del producto que desea añadir: \n");
-		        String producto=scanner.next();
-		        System.out.println("Ingrese la cantadidad de "+producto+" que desea añadir: \n");
-		        int cant=scanner.nextInt();
+		        String producto_car=scanner.next();
+		        System.out.println("Ingrese la cantadidad de "+producto_car+" que desea añadir: \n");
+		        int cant_car=scanner.nextInt();
 		        for (int x=0;x<carnes.size();x++) {
-		        	if (carnes.get(x).nom_producto.toLowerCase()==producto.toLowerCase()) {
-		        		carnes.get(x).stock+=cant;
+		        	if (carnes.get(x).nom_producto.toLowerCase()==producto_car.toLowerCase()) {
+		        		carnes.get(x).stock+=cant_car;
 		        		System.out.println("El producto ya se encontraba en el inventario, se agrego la cantidad al stock del producto. \n");
 		        		break;
 		        	}
 		        }
 		        System.out.println("Ingrese el id del producto que desea añadir: \n");
-		        String id=scanner.next();
+		        String id_car=scanner.next();
 		        System.out.println("Ingrese el precio de venta del producto que desea añadir: \n");
-		        int pre=scanner.nextInt();
+		        int pre_car=scanner.nextInt();
 		        System.out.println("ingrese el peso del producto que dea añadir: \n");
-		        int pes=scanner.nextInt();
-		        superm.AgregarProdCarnes(id, pre, producto, cant,pes);
+		        int pes_car=scanner.nextInt();
+		        superm.AgregarProdCarnes(id_car, pre_car, producto_car, cant_car,pes_car);
+		        System.out.println("Se ha agregado el producto al inventario del supermercado, gracias por usar nuestro sistema.");
+		    break;
+		    case(2):
+		    	System.out.println("Ingrese el nombre del producto que desea añadir: \n");
+		        String producto_lac=scanner.next();
+		        System.out.println("Ingrese la cantadidad de "+producto_lac+" que desea añadir: \n");
+		        int cant_lac=scanner.nextInt();
+		        for (int x=0;x<lacteos.size();x++) {
+		        	if (lacteos.get(x).nom_producto.toLowerCase()==producto_lac.toLowerCase()) {
+		        		lacteos.get(x).stock+=cant_lac;
+		        		System.out.println("El producto ya se encontraba en el inventario, se agrego la cantidad al stock del producto. \n");
+		        		break;
+		        	}
+		        }
+		        System.out.println("Ingrese el id del producto que desea añadir: \n");
+		        String id_lac=scanner.next();
+		        System.out.println("Ingrese el precio de venta del producto que desea añadir: \n");
+		        int pre_lac=scanner.nextInt();
+		        System.out.println("ingrese el peso del producto que dea añadir: \n");
+		        superm.AgregarProdLacteo(id_lac, pre_lac, producto_lac, cant_lac);
+		        System.out.println("Se ha agregado el producto al inventario del supermercado, gracias por usar nuestro sistema.");
+		    break;
+		    case(3):
+		    	System.out.println("Ingrese el nombre del producto que desea añadir: \n");
+		        String producto_veg=scanner.next();
+		        System.out.println("Ingrese la cantadidad de "+producto_veg+" que desea añadir: \n");
+		        int cant_veg=scanner.nextInt();
+		        for (int x=0;x<vegetales.size();x++) {
+		        	if (vegetales.get(x).nom_producto.toLowerCase()==producto_veg.toLowerCase()) {
+		        		vegetales.get(x).stock+=cant_veg;
+		        		System.out.println("El producto ya se encontraba en el inventario, se agrego la cantidad al stock del producto. \n");
+		        		break;
+		        	}
+		        }
+		        System.out.println("Ingrese el id del producto que desea añadir: \n");
+		        String id_veg=scanner.next();
+		        System.out.println("Ingrese el precio de venta del producto que desea añadir: \n");
+		        int pre_veg=scanner.nextInt();
+		        System.out.println("ingrese el peso del producto que dea añadir: \n");
+		        superm.AgregarProdVegetales(id_veg, pre_veg, producto_veg, cant_veg);
+		        System.out.println("Se ha agregado el producto al inventario del supermercado, gracias por usar nuestro sistema.");
+		    break;
+		    case(4):
+		    	System.out.println("Ingrese el nombre del producto que desea añadir: \n");
+		        String producto_tec=scanner.next();
+		        System.out.println("Ingrese la cantadidad de "+producto_tec+" que desea añadir: \n");
+		        int cant_tec=scanner.nextInt();
+		        for (int x=0;x<tecnologia.size();x++) {
+		        	if (tecnologia.get(x).nom_producto.toLowerCase()==producto_tec.toLowerCase()) {
+		        		tecnologia.get(x).stock+=cant_tec;
+		        		System.out.println("El producto ya se encontraba en el inventario, se agrego la cantidad al stock del producto. \n");
+		        		break;
+		        	}
+		        }
+		        System.out.println("Ingrese el id del producto que desea añadir: \n");
+		        String id_tec=scanner.next();
+		        System.out.println("Ingrese el precio de venta del producto que desea añadir: \n");
+		        int pre_tec=scanner.nextInt();
+		        System.out.println("ingrese el peso del producto que dea añadir: \n");
+		        superm.AgregarProdTecnologia(id_tec, pre_tec, producto_tec, cant_tec);
+		        System.out.println("Se ha agregado el producto al inventario del supermercado, gracias por usar nuestro sistema.");
 		    break;
 		    }
 	    break;
