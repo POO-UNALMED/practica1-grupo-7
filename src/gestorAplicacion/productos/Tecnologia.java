@@ -22,7 +22,7 @@ public class Tecnologia extends Producto {
 	public static boolean GirarRuleta() {
 		Random RNG=new Random();
 		int NumberRolled=RNG.nextInt(101);
-		if(NumberRolled<=25) {
+		if(NumberRolled<=5) {
 			return true;
 		}
 		else {
