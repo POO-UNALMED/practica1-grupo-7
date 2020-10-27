@@ -1,8 +1,12 @@
 package gestorAplicacion.productos;
 import gestorAplicacion.personas.*;
 import java.util.ArrayList;
-
-public class Compra {
+import java.io.Serializable;
+public class Compra implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Usuario user;
 	public Factura fact;
 	public Mensajero menID;

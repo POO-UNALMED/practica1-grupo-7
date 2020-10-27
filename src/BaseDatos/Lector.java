@@ -3,7 +3,11 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
 import gestorAplicacion.productos.*;
-public class Lector {
+public class Lector implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static Path path;
 	private static ObjectOutputStream o;
 	private static OutputStream f;
@@ -16,7 +20,7 @@ public class Lector {
 	public static void setListaObjetos(ArrayList<Supermercado> listaObjetos) {
 		Lector.listaObjetos = listaObjetos;
 	}
-	{
+	static{
 		File decoy=new File("");
 		try {
 			path = Files.createDirectory(Paths.get(decoy.getAbsolutePath()+"\\src\\BaseDatos").resolve("temp"));
@@ -35,11 +39,12 @@ public class Lector {
 				listaObjetos.add(sup);
 			}
 			while(o1!=null);
+			o1.close();
 		} catch (IOException e) {
 			System.out.println("f");
 		}
 		catch(ClassNotFoundException e) {
-			System.out.println("f");
+			System.out.println("e");
 		}
 	}
 	public static void Escribir() {
@@ -50,6 +55,7 @@ public class Lector {
 			for (Supermercado i: listaObjetos) {
 				o.writeObject(i);
 			}
+			o.close();
 		} catch (IOException e) {
 			System.out.println("f");
 		}

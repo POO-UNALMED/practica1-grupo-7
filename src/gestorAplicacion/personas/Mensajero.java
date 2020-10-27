@@ -1,8 +1,13 @@
 package gestorAplicacion.personas;
 import gestorAplicacion.productos.*;
+import java.io.Serializable;
 
 import java.util.*;
-public class Mensajero extends Persona implements Empleado{
+public class Mensajero extends Persona implements Empleado,Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public String transporte;
 	public int contador;
 	public int gan_adicional;

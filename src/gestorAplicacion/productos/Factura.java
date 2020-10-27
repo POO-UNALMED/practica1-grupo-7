@@ -1,9 +1,13 @@
 package gestorAplicacion.productos;
 import gestorAplicacion.personas.*;
 import java.util.ArrayList;
+import java.io.Serializable;
+public class Factura implements Serializable{
 
-public class Factura {
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Mensajero idMen;
 	public int idFactura;
 	public Usuario user;

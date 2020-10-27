@@ -1,6 +1,10 @@
 package gestorAplicacion.productos;
-
-public class DetalleFactura {
+import java.io.Serializable;
+public class DetalleFactura implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Factura id_factura;
 	private Producto id_producto;
 	private int cantidad;

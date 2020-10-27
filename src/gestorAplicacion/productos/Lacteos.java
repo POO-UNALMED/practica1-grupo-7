@@ -1,6 +1,10 @@
 package gestorAplicacion.productos;
-
-public class Lacteos extends Producto implements Refrigerador{
+import java.io.Serializable;
+public class Lacteos extends Producto implements Refrigerador,Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static double iva=0.0;
 	double valorAgregado;
 	public Lacteos(String id_producto, int precio, String nom_producto, int stock, String tipo_producto) {

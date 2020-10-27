@@ -5,7 +5,7 @@ import gestorAplicacion.personas.*;
 import gestorAplicacion.productos.*;
 public class casoBase {
 
-	public void crearObjetos() {
+	public static void crearObjetos() {
 		String[] nombresGenericos= new String[] {"Carlos", "Juan", "Rosa", "Rosalba", "Jorge", "Mariana", "Matilda", "Steven", "Zaratustra","Clara", "Rafael","Clarence"};
 		String[] idsGenericos=new String[] {"1000294025", "923135078", "980432808", "997453286", "994395782", "967284910", "945285904", "999123456", "666666666","996734653", "998244075","989234086"};
 		String[] generosGenericos=new String[] {"M", "N/A", "F", "F", "M", "F", "N/A", "N/A", "SuperM","F", "M","M"};
@@ -33,33 +33,32 @@ public class casoBase {
 			 ArrayList<Producto> productos= new ArrayList<>();	
 			 Supermercado supp=new Supermercado(nomSupGenericos[i],dirSupGenericos[i],telSupGenericos[i],cajeros, mensajeros);
 			for(int k=0; k<4;i++) {
-				new Mensajero(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
-						telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],transportesGenericos[(int) Math.floor(Math.random()*12+1)],0,0,supp);
-				supp.Cajero.add(new Usuario(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
-						telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],i));			
+				new Mensajero(nombresGenericos[(int) Math.floor(Math.random()*11+1)],idsGenericos[(int) Math.floor(Math.random()*11+1)],generosGenericos[(int) Math.floor(Math.random()*11+1)],direccionesGenericas[(int) Math.floor(Math.random()*11+1)],
+						telGenericos[(int) Math.floor(Math.random()*11+1)],celGenericos[(int) Math.floor(Math.random()*11+1)],transportesGenericos[(int) Math.floor(Math.random()*11+1)],0,0,supp);
+				supp.Cajero.add(new Usuario(nombresGenericos[(int) Math.floor(Math.random()*11+1)],idsGenericos[(int) Math.floor(Math.random()*11+1)],generosGenericos[(int) Math.floor(Math.random()*11+1)],direccionesGenericas[(int) Math.floor(Math.random()*11+1)],
+						telGenericos[(int) Math.floor(Math.random()*11+1)],celGenericos[(int) Math.floor(Math.random()*11+1)],i));			
 			}
 			for(int k=0;k<5;k++) {
 				int rout=(int) Math.floor(Math.random()*4+1);
 				switch(rout) {
 				case(1):  
-					productos.add(new Carnes(id_prodGenericos[(int) Math.floor(Math.random()*12+1)], preciosCarGenericos[k],nombresCarGenericos[k],(int) Math.floor(Math.random()*15+1), "Carnico", pesosCarGenericos[k]));
+					productos.add(new Carnes(id_prodGenericos[(int) Math.floor(Math.random()*11+1)], preciosCarGenericos[k],nombresCarGenericos[k],(int) Math.floor(Math.random()*15+1), "Carnico", pesosCarGenericos[k]));
 					break;
 				
 				case(2):
-					productos.add(new Tecnologia(id_prodGenericos[(int) Math.floor(Math.random()*12+1)], preciosTecnoGenericos[k],nombresTecnoGenericos[k],(int) Math.floor(Math.random()*15+1), "Tecnologia"));
+					productos.add(new Tecnologia(id_prodGenericos[(int) Math.floor(Math.random()*11+1)], preciosTecnoGenericos[k],nombresTecnoGenericos[k],(int) Math.floor(Math.random()*15+1), "Tecnologia"));
 					break;
 				
 				case(3):
-					productos.add(new Lacteos(id_prodGenericos[(int) Math.floor(Math.random()*12+1)], preciosLacGenericos[k],nombresLacGenericos[k],(int) Math.floor(Math.random()*15+1), "Lacteo"));
+					productos.add(new Lacteos(id_prodGenericos[(int) Math.floor(Math.random()*11+1)], preciosLacGenericos[k],nombresLacGenericos[k],(int) Math.floor(Math.random()*15+1), "Lacteo"));
 					break;
 				case(4):
-					productos.add(new Vegetales(id_prodGenericos[(int) Math.floor(Math.random()*12+1)], preciosVegGenericos[k],nombresVegGenericos[k],(int) Math.floor(Math.random()*15+1), "Vegetal"));
+					productos.add(new Vegetales(id_prodGenericos[(int) Math.floor(Math.random()*11+1)], preciosVegGenericos[k],nombresVegGenericos[k],(int) Math.floor(Math.random()*15+1), "Vegetal"));
 					break;
 				}
 				
 			}
 			supp.setProducts(productos);
-			Lector.getListaObjetos().add(supp);
 		}
 	}
 }

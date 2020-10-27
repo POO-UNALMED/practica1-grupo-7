@@ -1,9 +1,13 @@
 package gestorAplicacion.personas;
 import java.util.ArrayList;
 import gestorAplicacion.productos.*;
+import java.io.Serializable;
+public class Usuario extends Persona implements Empleado,Serializable{
 
-public class Usuario extends Persona implements Empleado{
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public int caja;
 	public static final int salario_cajero=75000;
 	public  ArrayList <Compra> Compras = new ArrayList<Compra>();

@@ -1,7 +1,11 @@
 package gestorAplicacion.productos;
 import java.util.Random;
-
-public class Tecnologia extends Producto {
+import java.io.Serializable;
+public class Tecnologia extends Producto implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static final double iva=0.19;
 	double valorAgregado;
 	public Tecnologia() {

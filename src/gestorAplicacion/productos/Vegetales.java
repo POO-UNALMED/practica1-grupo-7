@@ -1,6 +1,10 @@
 package gestorAplicacion.productos;
-
-public class Vegetales extends Producto implements Refrigerador{
+import java.io.Serializable;
+public class Vegetales extends Producto implements Refrigerador,Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static final double iva=0.19;
 	double valorAgregado;
 

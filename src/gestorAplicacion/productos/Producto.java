@@ -1,6 +1,10 @@
 package gestorAplicacion.productos;
-
-public abstract class Producto {
+import java.io.Serializable;
+public abstract class Producto implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public String id_producto;
 	public int precio;
 	public String nom_producto;
