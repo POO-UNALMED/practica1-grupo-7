@@ -88,6 +88,7 @@ public class Compra {
 		}
 		user.Compras.add(this);
 		Factura fact_id=new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this,DetalleFacturaList);
+		menID.facturas.add(fact_id);
 		for (int i=0;i<DetalleFacturaList.size();i++) {
 			DetalleFacturaList.get(i).setId_factura(fact_id);
 		}
