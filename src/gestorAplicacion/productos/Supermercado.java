@@ -23,7 +23,6 @@ public class Supermercado {
     public ArrayList<Producto> getProducts() {
 		return Products;
 	}
-
     public void setProducts(ArrayList<Producto> products) {
 		Products = products;
 	}

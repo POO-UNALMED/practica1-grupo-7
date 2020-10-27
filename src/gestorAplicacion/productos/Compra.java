@@ -12,7 +12,7 @@ public class Compra {
 	public boolean propinabool=false;
 	public double sumValorAgregado=0;
 	public ArrayList<DetalleFactura>DetalleFacturaList=new ArrayList<>();
-	Compra(Usuario user,Factura fac,Mensajero menID,Supermercado superm){
+	public Compra(Usuario user,Factura fac,Mensajero menID,Supermercado superm){
 		this.user=user;
 		this.fact=fac;
 		this.menID=menID;
