@@ -132,7 +132,7 @@ public class Supermercado {
 	//ULTIMA FUNCIONALIDAD
 	public void GanadoresRifa() {
 		int ganadoresrifa=Collections.frequency(Estadisticas, "Xiamo Note S");
-		System.out.println(ganadoresrifa+"Ganaron un celular Xiamo Note S al tener la suerte de ganar la rifa");
+		System.out.println(ganadoresrifa+"Personas ganaron un celular Xiamo Note S al tener la suerte de ganar la rifa");
 	}
 }
 
