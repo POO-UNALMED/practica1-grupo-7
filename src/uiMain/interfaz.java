@@ -39,6 +39,12 @@ public class interfaz {
 		int op1=scanner.nextInt();
 		switch (op1) {
 		case (1):
+			Factura factura=null;
+		    Random RNG=new Random();
+		    int i=RNG.nextInt(superm.Cajero.size()+1);
+		    Random RNG2=new Random();
+		    int y=RNG2.nextInt(superm.Empleados.size()+1);
+			Compra compra=new Compra(superm.Cajero.get(i), factura, superm.Empleados.get(y), superm);
 			System.out.println("Por favor seleccione la operacion que desea realizar: \n");
 		    System.out.println("1. Facturar un producto. \n2. Finalizar facturacion.");
 		    int op2=scanner.nextInt();
@@ -67,7 +73,7 @@ public class interfaz {
 		            System.out.println(producto_car.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_car=scanner.nextInt();
-		            //REALIZAR LOS METODOS PARA COMPROBAR LA COMPRA Y AÑADIR TODO LO NECESARIO A LA FACTURA Y ESAS COSAS
+		            compra.agregar(producto_car, cant_car, superm);
 		            break;
 		        case(2):
 		        	Lacteos producto_lac=null;
@@ -88,7 +94,7 @@ public class interfaz {
 		            System.out.println(producto_lac.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_lac=scanner.nextInt();
-		            //REALIZAR LOS METODOS PARA COMPROBAR LA COMPRA Y AÑADIR TODO LO NECESARIO A LA FACTURA Y ESAS COSAS
+		            compra.agregar(producto_lac, cant_lac, superm);
 		            break;
 		        case(3):
 		        	Vegetales producto_veg=null;
@@ -109,7 +115,7 @@ public class interfaz {
 		            System.out.println(producto_veg.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_veg=scanner.nextInt();
-		            //REALIZAR LOS METODOS PARA COMPROBAR LA COMPRA Y AÑADIR TODO LO NECESARIO A LA FACTURA Y ESAS COSAS
+		            compra.agregar(producto_veg, cant_veg, superm);
 		            break;
 		        case(4):
 		        	Tecnologia producto_tec=null;
@@ -127,7 +133,7 @@ public class interfaz {
 		            System.out.println(producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_tec=scanner.nextInt();
-		            //REALIZAR LOS METODOS PARA COMPROBAR LA COMPRA Y AÑADIR TODO LO NECESARIO A LA FACTURA Y ESAS COSAS
+		            compra.agregar(producto_tec, cant_tec, superm);
 		            break;
 		            }
 		        break;
@@ -165,7 +171,7 @@ public class interfaz {
 		            System.out.println(producto_car.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_car=scanner.nextInt();
-		            //REALIZAR LOS METODOS PARA COMPROBAR LA COMPRA Y AÑADIR TODO LO NECESARIO A LA FACTURA Y ESAS COSAS
+		            compra.agregar(producto_car, cant_car, superm);
 		            break;
 		        case(2):
 		        	Lacteos producto_lac=null;
@@ -186,7 +192,7 @@ public class interfaz {
 		            System.out.println(producto_lac.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_lac=scanner.nextInt();
-		            //REALIZAR LOS METODOS PARA COMPROBAR LA COMPRA Y AÑADIR TODO LO NECESARIO A LA FACTURA Y ESAS COSAS
+		            compra.agregar(producto_lac, cant_lac, superm);
 		            break;
 		        case(3):
 		        	Vegetales producto_veg=null;
@@ -207,7 +213,7 @@ public class interfaz {
 		            System.out.println(producto_veg.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_veg=scanner.nextInt();
-		            //REALIZAR LOS METODOS PARA COMPROBAR LA COMPRA Y AÑADIR TODO LO NECESARIO A LA FACTURA Y ESAS COSAS
+		            compra.agregar(producto_veg, cant_veg, superm);
 		            break;
 		        case(4):
 		        	Tecnologia producto_tec=null;
@@ -225,11 +231,22 @@ public class interfaz {
 		            System.out.println(producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_tec=scanner.nextInt();
-		            //REALIZAR LOS METODOS PARA COMPROBAR LA COMPRA Y AÑADIR TODO LO NECESARIO A LA FACTURA Y ESAS COSAS
+		            compra.agregar(producto_tec, cant_tec, superm);
 		            break;
 		            }
 		    }
-		    //(OPCIONAL) AQUI MOSTRAR LA FACTURA COMPLETA DE SER ENCESARIO
+		    System.out.println("Por favor ingrese el banco al que se encuentra afiliado: \n");
+		    String bank=scanner.next();
+		    Factura nue_fac=compra.efectuarCompra(bank);
+		    compra.setFact(nue_fac);
+		    nue_fac.toString();
+		    System.out.println("Se presento alguna queja con respecto al servicio dado: \n 1. Si. \n 2. No.");
+		    int ul=scanner.nextInt();
+		    if (ul==1) {
+		    	System.out.println("Ingrese la queja que se presento: \n");
+		    	String queja=scanner.next();
+		    	superm.Cajero.get(i).Quejarse(compra,queja);
+		    }
 		    System.out.println("Gracias por usar nuestro sistema el dia de hoy, que tenga un buen dia y una prospera vida. \n");
 			break;
 		case (2):
