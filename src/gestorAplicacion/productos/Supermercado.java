@@ -40,20 +40,20 @@ public class Supermercado {
 			System.out.println("hay"+i.stock+"del producto"+i.nom_producto);
 		}
 	}
-	public void AgregarProdLacteo(String id_producto, int precio, String nom_producto, int stock, String tipo_producto) {
-	   Lacteos w=new Lacteos(id_producto,precio,nom_producto,stock,tipo_producto);
+	public void AgregarProdLacteo(String id_producto, int precio, String nom_producto, int stock) {
+	   Lacteos w=new Lacteos(id_producto,precio,nom_producto,stock,"Lacteo");
 	   Products.add(w);
 	}
-	public void AgregarProdCarnes(String id_producto, int precio, String nom_producto, int stock, String tipo_producto,int peso) {
-		   Carnes w=new Carnes(id_producto,precio,nom_producto,stock,tipo_producto,peso);
+	public void AgregarProdCarnes(String id_producto, int precio, String nom_producto, int stock,int peso) {
+		   Carnes w=new Carnes(id_producto,precio,nom_producto,stock,"Carnico",peso);
 		   Products.add(w);
 	}
-	public void AgregarProdVegetales(String id_producto, int precio, String nom_producto, int stock, String tipo_producto) {
-		   Vegetales w=new Vegetales(id_producto,precio,nom_producto,stock,tipo_producto);
+	public void AgregarProdVegetales(String id_producto, int precio, String nom_producto, int stock) {
+		   Vegetales w=new Vegetales(id_producto,precio,nom_producto,stock,"Vegetal");
 		   Products.add(w);
 	}
-	public void AgregarProdTecnologia(String id_producto, int precio, String nom_producto, int stock, String tipo_producto) {
-		   Tecnologia w=new Tecnologia(id_producto,precio,nom_producto,stock,tipo_producto);
+	public void AgregarProdTecnologia(String id_producto, int precio, String nom_producto, int stock) {
+		   Tecnologia w=new Tecnologia(id_producto,precio,nom_producto,stock,"Tecnologia");
 		   Products.add(w);
 	}
 	//FUNCIONALIDAD 2 (IMPLEMENTADA)

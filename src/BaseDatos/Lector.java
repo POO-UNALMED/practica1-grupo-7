@@ -2,7 +2,6 @@ package BaseDatos;
 import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
-import gestorAplicacion.personas.*;
 import gestorAplicacion.productos.*;
 public class Lector {
 	private static Path path;
