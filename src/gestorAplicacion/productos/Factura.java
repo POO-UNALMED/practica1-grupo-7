@@ -68,5 +68,12 @@ public class Factura {
 	}
 	public String getTelAtencion() {
 		return telAtencion;
-	}	
+	}
+	public String toString() {
+		String ListaDetFact="";
+		for(int i=0;productList.size()<i;i++) {
+			ListaDetFact+=productList.get(i).getId_producto().getNom_producto()+productList.get(i).getCantidad()+productList.get(i).getSubtotal()+"/n";
+		}
+		return "Su factura con id "+idFactura+" realizada con el banco "+banco+" genera un total de /n"+total+"/n Lista de Productos /n"+ListaDetFact;
+	}
 }
