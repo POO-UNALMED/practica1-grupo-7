@@ -7,7 +7,7 @@ public class Persona {
 	protected String direccion;
 	protected String telFijo;
 	protected String numCelular;
-	private static int totalPersonas;	
+
 		
 	public Persona(String nombre, String id, String genero, String direccion, String telFijo, String numCelular) {
 		this.nombre = nombre;
@@ -54,12 +54,7 @@ public class Persona {
 	public void setNumCalcular(String numCalcular) {
 		this.numCelular = numCalcular;
 	}
-	public static int getTotalPersonas() {
-		return totalPersonas;
-	}
-	public static void setTotalPersonas(int totalPersonas) {
-		Persona.totalPersonas = totalPersonas;
-	}
+
 	
 
 }
