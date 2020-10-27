@@ -35,15 +35,15 @@ public class interfaz {
 			}
 		}
 		System.out.println("Por favor seleccione la operacion que desea realizar: \n");
-		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3.Mostrar empleado con mas quejas del supermercado. \n4. Mostrar producto mas y menos vendido por el supermercado. \n5. Agregar producto al inventario del supermercado. \n6.Finalizar operacion.");
+		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar empleado con mas quejas del supermercado. \n4. Mostrar producto mas y menos vendido por el supermercado. \n5. Agregar producto al inventario del supermercado. \n6. Finalizar operacion.");
 		int op1=scanner.nextInt();
 		switch (op1) {
 		case (1):
 			Factura factura=null;
 		    Random RNG=new Random();
-		    int i=RNG.nextInt(superm.Cajero.size()+1);
+		    int i=RNG.nextInt(superm.Cajero.size());
 		    Random RNG2=new Random();
-		    int y=RNG2.nextInt(superm.Empleados.size()+1);
+		    int y=RNG2.nextInt(superm.Empleados.size());
 			Compra compra=new Compra(superm.Cajero.get(i), factura, superm.Empleados.get(y), superm);
 			System.out.println("Por favor seleccione la operacion que desea realizar: \n");
 		    System.out.println("1. Facturar un producto. \n2. Finalizar facturacion.");
@@ -51,7 +51,7 @@ public class interfaz {
 		    switch (op2) {
 		    case (1):
 		    	System.out.println("Seleccione el tipo de producto que desea facturar:\n");
-		        System.out.println("1. Carnes. \n2. Lacteos. \n3.Vegetales. \n4. Tecnologia. ");
+		        System.out.println("1. Carnes. \n2. Lacteos. \n3. Vegetales. \n4. Tecnologia. ");
 		        int tipo=scanner.nextInt();
 		        switch(tipo) {
 		        case(1):
@@ -65,12 +65,12 @@ public class interfaz {
 		            	System.out.println((x+1)+". "+carnes.get(x).nom_producto);
 		            }
 		            int car=scanner.nextInt();
-		            producto_car=carnes.get(car);
+		            producto_car=carnes.get(car-1);
 		            System.out.println(producto_car.Descripcion()+"\n");
 		            if (producto_car.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            }
-		            System.out.println(producto_car.precio+"\n");
+		            System.out.println("El precio de "+producto_car.nom_producto+"es "+producto_car.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_car=scanner.nextInt();
 		            compra.agregar(producto_car, cant_car, superm);
@@ -86,12 +86,12 @@ public class interfaz {
 		            	System.out.println((x+1)+". "+lacteos.get(x).nom_producto);
 		            }
 		            int lac=scanner.nextInt();
-		            producto_lac=lacteos.get(lac);
+		            producto_lac=lacteos.get(lac-1);
 		            System.out.println(producto_lac.Descripcion()+"\n");
 		            if (producto_lac.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            	}
-		            System.out.println(producto_lac.precio+"\n");
+		            System.out.println("El precio de "+producto_lac.nom_producto+"es "+producto_lac.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_lac=scanner.nextInt();
 		            compra.agregar(producto_lac, cant_lac, superm);
@@ -107,12 +107,12 @@ public class interfaz {
 		            	System.out.println((x+1)+". "+vegetales.get(x).nom_producto);
 		            }
 		            int veg=scanner.nextInt();
-		            producto_veg=vegetales.get(veg);
+		            producto_veg=vegetales.get(veg-1);
 		            System.out.println(producto_veg.Descripcion()+"\n");
 		            if (producto_veg.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            	}
-		            System.out.println(producto_veg.precio+"\n");
+		            System.out.println("El precio de "+producto_veg.nom_producto+"es "+producto_veg.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_veg=scanner.nextInt();
 		            compra.agregar(producto_veg, cant_veg, superm);
@@ -128,9 +128,9 @@ public class interfaz {
 		            	System.out.println((x+1)+". "+tecnologia.get(x).nom_producto);
 		            }
 		            int tec=scanner.nextInt();
-		            producto_tec=tecnologia.get(tec);
+		            producto_tec=tecnologia.get(tec-1);
 		            System.out.println(producto_tec.Descripcion()+"\n");
-		            System.out.println(producto_tec.precio+"\n");
+		            System.out.println("El precio de "+producto_tec.nom_producto+"es "+producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_tec=scanner.nextInt();
 		            compra.agregar(producto_tec, cant_tec, superm);
@@ -149,7 +149,7 @@ public class interfaz {
 		    		break;
 		    	}
 		    	System.out.println("Seleccione el tipo de producto que desea facturar:\n");
-		        System.out.println("1. Carnes. \n2. Lacteos. \n3.Vegetales. \n4. Tecnologia. ");
+		        System.out.println("1. Carnes. \n2. Lacteos. \n3. Vegetales. \n4. Tecnologia. ");
 		        int tipo=scanner.nextInt();
 		        switch(tipo) {
 		        case(1):
@@ -163,12 +163,12 @@ public class interfaz {
 		            	System.out.println((x+1)+". "+carnes.get(x).nom_producto);
 		            }
 		            int car=scanner.nextInt();
-		            producto_car=carnes.get(car);
+		            producto_car=carnes.get(car-1);
 		            System.out.println(producto_car.Descripcion()+"\n");
 		            if (producto_car.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            }
-		            System.out.println(producto_car.precio+"\n");
+		            System.out.println("El precio de "+producto_car.nom_producto+"es "+producto_car.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_car=scanner.nextInt();
 		            compra.agregar(producto_car, cant_car, superm);
@@ -184,12 +184,12 @@ public class interfaz {
 		            	System.out.println((x+1)+". "+lacteos.get(x).nom_producto);
 		            }
 		            int lac=scanner.nextInt();
-		            producto_lac=lacteos.get(lac);
+		            producto_lac=lacteos.get(lac-1);
 		            System.out.println(producto_lac.Descripcion()+"\n");
 		            if (producto_lac.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            	}
-		            System.out.println(producto_lac.precio+"\n");
+		            System.out.println("El precio de "+producto_lac.nom_producto+"es "+producto_lac.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_lac=scanner.nextInt();
 		            compra.agregar(producto_lac, cant_lac, superm);
@@ -205,12 +205,12 @@ public class interfaz {
 		            	System.out.println((x+1)+". "+vegetales.get(x).nom_producto);
 		            }
 		            int veg=scanner.nextInt();
-		            producto_veg=vegetales.get(veg);
+		            producto_veg=vegetales.get(veg-1);
 		            System.out.println(producto_veg.Descripcion()+"\n");
 		            if (producto_veg.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            	}
-		            System.out.println(producto_veg.precio+"\n");
+		            System.out.println("El precio de "+producto_veg.nom_producto+"es "+producto_veg.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_veg=scanner.nextInt();
 		            compra.agregar(producto_veg, cant_veg, superm);
@@ -226,9 +226,9 @@ public class interfaz {
 		            	System.out.println((x+1)+". "+tecnologia.get(x).nom_producto);
 		            }
 		            int tec=scanner.nextInt();
-		            producto_tec=tecnologia.get(tec);
+		            producto_tec=tecnologia.get(tec-1);
 		            System.out.println(producto_tec.Descripcion()+"\n");
-		            System.out.println(producto_tec.precio+"\n");
+		            System.out.println("El precio de "+producto_tec.nom_producto+"es "+producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_tec=scanner.nextInt();
 		            compra.agregar(producto_tec, cant_tec, superm);

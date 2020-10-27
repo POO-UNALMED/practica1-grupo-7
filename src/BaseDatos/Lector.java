@@ -29,7 +29,6 @@ public class Lector implements Serializable{
 			for (Supermercado e:listaObjetos) {
 				System.out.println(e.getNombre());
 			}
-			Escribir();
 			System.out.println("ff'nt");
 		} catch (IOException e) {
 			path=Paths.get(decoy.getAbsolutePath()+"\\src\\BaseDatos\\temp\\Objetos.txt");
