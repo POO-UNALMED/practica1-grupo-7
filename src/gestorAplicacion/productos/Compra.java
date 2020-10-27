@@ -11,6 +11,7 @@ public class Compra {
 	public static int totalCompra=0;
 	public boolean propinabool=false;
 	public double sumValorAgregado=0;
+	public ArrayList<DetalleFactura>DetalleFacturaList=new ArrayList<>();
 	Compra(Usuario user,Factura fac,Mensajero menID,Supermercado superm){
 		this.user=user;
 		this.fact=fac;
@@ -64,7 +65,10 @@ public class Compra {
 			}
 			fact.subTotal_detallefac+=pro.precio*cant;
 			sumValorAgregado+=pro.valorAgregado();
-			pro.stock-=cant;		
+			pro.stock-=cant;
+			Factura facturanull=null;
+			DetalleFactura item=new DetalleFactura(facturanull,pro,cant,pro.precio*cant);
+			DetalleFacturaList.add(item);
 		}
 		else {
 			System.out.println("El producto se encuentra agotado");
@@ -83,7 +87,11 @@ public class Compra {
 			propinabool=false;
 		}
 		user.Compras.add(this);
-		return new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this);	
+		Factura fact_id=new Factura(menID,contadoridf,user,total,sumValorAgregado,fact.subTotal_detallefac,banco,this,DetalleFacturaList);
+		for (int i=0;i<DetalleFacturaList.size();i++) {
+			DetalleFacturaList.get(i).setId_factura(fact_id);
+		}
+		return fact_id ;	
 		}
 	}
 	
