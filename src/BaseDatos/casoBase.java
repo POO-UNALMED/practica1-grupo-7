@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import gestorAplicacion.personas.*;
 import gestorAplicacion.productos.*;
 public class casoBase {
-	private ArrayList<Mensajero> mensajeros=new ArrayList<>();
-	private ArrayList<Usuario> cajeros=new ArrayList<>();
+	private ArrayList<ArrayList<Mensajero>> mensajeros=new ArrayList<>();
+	private ArrayList<ArrayList<Usuario>> cajeros=new ArrayList<>();
+	private ArrayList<ArrayList<Producto>> productos= new ArrayList<>();	
 	public void crearObjetos() {
 		String[] nombresGenericos= new String[] {"Carlos", "Juan", "Rosa", "Rosalba", "Jorge", "Mariana", "Matilda", "Steven", "Zaratustra","Clara", "Rafael","Clarence"};
 		String[] idsGenericos=new String[] {"1000294025", "923135078", "980432808", "997453286", "994395782", "967284910", "945285904", "999123456", "666666666","996734653", "998244075","989234086"};
@@ -14,10 +15,18 @@ public class casoBase {
 		String[] telGenericos=new String[] {"6123982", "8964729", "9472754", "1263585", "2583532", "35725427", "1133525", "56427436", "6666666","1252636", "13585474","2468495"};
 		String[] celGenericos=new String[] {"3118640586", "3216784839", "3267653524", "3556458705", "3625673428", "3723458642", "3926542714", "3652376538", "6666666666","3472461423", "3527436235","3864569362"};
 		String[] transportesGenericos=new String[] {"Carro", "Camion", "Caballo", "Potro", "Carro", "Deportivo", "Dron", "Caja", "Pie","Escoba", "Carruaje","Otra Persona Viva"};
-		ArrayList<ArrayList<Producto>> productos= new ArrayList<>();
 		productos.add(new ArrayList<Producto>());
 		productos.add(new ArrayList<Producto>());
 		productos.add(new ArrayList<Producto>());
+		productos.add(new ArrayList<Producto>());
+		mensajeros.add(new ArrayList<Mensajero>());
+		mensajeros.add(new ArrayList<Mensajero>());
+		mensajeros.add(new ArrayList<Mensajero>());
+		mensajeros.add(new ArrayList<Mensajero>());
+		cajeros.add(new ArrayList<Usuario>());
+		cajeros.add(new ArrayList<Usuario>());
+		cajeros.add(new ArrayList<Usuario>());
+		cajeros.add(new ArrayList<Usuario>());
 		String[] nombresCarGenericos=new String[] {"Salchicha Zenu", "Jamon del Campo", "Solomo Salomon", "Carne Generica 323","Carne de Res Monsanto"};
 		int[] preciosCarGenericos=new int[] {35, 188, 11, 8, 5};
 		int[] pesosCarGenericos=new int[] {240, 34, 500, 500, 100};
@@ -28,14 +37,32 @@ public class casoBase {
 		String[] nombresVegGenericos=new String[] {"Lechuga", "Pimenton", "Pepino", "Zanahoria", "Arracacha"};
 		int[] preciosVegGenericos=new int[] {2280,2650, 5900, 1500, 2500 };
 		String[] id_prodGenericos= new String[] {"1233245", "9328494", "2938764", "2938574", "9483765", "4850293", "5920482", "2948276", "2291847","5743821", "3728954","3849182"};
-		
-		for(int i=0; i<4;i++) {
-			mensajeros.add(new Mensajero(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
-					telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],transportesGenericos[(int) Math.floor(Math.random()*12+1)],0,0));
-			cajeros.add(new Usuario(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
-					telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],i));
-			
+		for(int i=0; i<4;i++) {			
+			for(int k=0; k<4;i++) {
+				mensajeros.get(i).add(new Mensajero(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
+						telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],transportesGenericos[(int) Math.floor(Math.random()*12+1)],0,0));
+				cajeros.get(i).add(new Usuario(nombresGenericos[(int) Math.floor(Math.random()*12+1)],idsGenericos[(int) Math.floor(Math.random()*12+1)],generosGenericos[(int) Math.floor(Math.random()*12+1)],direccionesGenericas[(int) Math.floor(Math.random()*12+1)],
+						telGenericos[(int) Math.floor(Math.random()*12+1)],celGenericos[(int) Math.floor(Math.random()*12+1)],i));			
+			}
+			for(int k=0;k<5;k++) {
+				int rout=(int) Math.floor(Math.random()*4+1);
+				switch(rout) {
+				case(1):  
+					productos.get(i).add(new Carnes(id_prodGenericos[(int) Math.floor(Math.random()*12+1)], preciosCarGenericos[k],nombresCarGenericos[k],(int) Math.floor(Math.random()*15+1), "Carnico", pesosCarGenericos[k]));
+					break;
+				
+				case(2):
+					productos.get(i).add(new Tecnologia(id_prodGenericos[(int) Math.floor(Math.random()*12+1)], preciosTecnoGenericos[k],nombresTecnoGenericos[k],(int) Math.floor(Math.random()*15+1), "Tecnologia"));
+					break;
+				
+				case(3):
+					productos.get(i).add(new Lacteos(id_prodGenericos[(int) Math.floor(Math.random()*12+1)], preciosLacGenericos[k],nombresLacGenericos[k],(int) Math.floor(Math.random()*15+1), "Lacteo"));
+					break;
+				case(4):
+					productos.get(i).add(new Vegetales(id_prodGenericos[(int) Math.floor(Math.random()*12+1)], preciosVegGenericos[k],nombresVegGenericos[k],(int) Math.floor(Math.random()*15+1), "Vegetal"));
+					break;
+				}
+			}
 		}
-		
 	}
 }
