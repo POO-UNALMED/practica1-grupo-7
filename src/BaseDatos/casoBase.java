@@ -32,7 +32,7 @@ public class casoBase {
 			 ArrayList<Usuario> cajeros=new ArrayList<>();
 			 ArrayList<Producto> productos= new ArrayList<>();	
 			 Supermercado supp=new Supermercado(nomSupGenericos[i],dirSupGenericos[i],telSupGenericos[i],cajeros, mensajeros);
-			for(int k=0; k<4;i++) {
+			for(int k=0; k<4;k++) {
 				new Mensajero(nombresGenericos[(int) Math.floor(Math.random()*11+1)],idsGenericos[(int) Math.floor(Math.random()*11+1)],generosGenericos[(int) Math.floor(Math.random()*11+1)],direccionesGenericas[(int) Math.floor(Math.random()*11+1)],
 						telGenericos[(int) Math.floor(Math.random()*11+1)],celGenericos[(int) Math.floor(Math.random()*11+1)],transportesGenericos[(int) Math.floor(Math.random()*11+1)],0,0,supp);
 				supp.Cajero.add(new Usuario(nombresGenericos[(int) Math.floor(Math.random()*11+1)],idsGenericos[(int) Math.floor(Math.random()*11+1)],generosGenericos[(int) Math.floor(Math.random()*11+1)],direccionesGenericas[(int) Math.floor(Math.random()*11+1)],
