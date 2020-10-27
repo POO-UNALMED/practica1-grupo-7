@@ -20,6 +20,9 @@ public class Supermercado {
 		this.Cajero=Cajeros;
 		Lector.getListaObjetos().add(this);
 	}
+	public void setProducts(ArrayList<Producto> products) {
+		Products = products;
+	}
 	public String getNombre() {
 		return nombre;
 	}
