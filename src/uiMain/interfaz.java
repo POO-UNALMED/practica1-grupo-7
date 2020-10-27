@@ -3,7 +3,6 @@ import java.util.*;
 import gestorAplicacion.productos.*;
 import gestorAplicacion.personas.*;
 import BaseDatos.*;
-
 public class interfaz {
 	//AQUI CARGAR TODOS LOS OBJETOS
 	public static void main(String[] args) {
@@ -39,9 +38,11 @@ public class interfaz {
 		        		break;
 		        	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
-		            //RECORRER LA LISTA DE CARNES E IMPRIMIR EL NOMBRE DE TODOS LOS PRODUCTOS DE ESTE TIPO
+		            for (int x=0;x<carnes.size();x++) {
+		            	System.out.println((x+1)+". "+carnes.get(x));
+		            }
 		            int car=scanner.nextInt();
-		            //ASIGNAR LA VARIABLE LOCAL PRODUCTO COMO APUNTADOR DEL PRODUCTO CON INDICE CAR EN LA LISTA CARNES
+		            producto_car=carnes.get(car);
 		            System.out.println(producto_car.Descripcion()+"\n");
 		            if (producto_car.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
@@ -53,14 +54,16 @@ public class interfaz {
 		            break;
 		        case(2):
 		        	Lacteos producto_lac=null;
-		            if (carnes.isEmpty()) {
+		            if (lacteos.isEmpty()) {
 		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo lacteo, disculpe las moelstias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
-		            //RECORRER LA LISTA DE LACTEOS E IMPRIMIR EL NOMBRE DE TODOS LOS PRODUCTOS DE ESTE TIPO
+		            for (int x=0;x<lacteos.size();x++) {
+		            	System.out.println((x+1)+". "+lacteos.get(x));
+		            }
 		            int lac=scanner.nextInt();
-		            //ASIGNAR LA VARIABLE LOCAL PRODUCTO COMO APUNTADOR DEL PRODUCTO CON INDICE LAC EN LA LISTA LACTEOS
+		            producto_lac=lacteos.get(lac);
 		            System.out.println(producto_lac.Descripcion()+"\n");
 		            if (producto_lac.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
@@ -72,14 +75,16 @@ public class interfaz {
 		            break;
 		        case(3):
 		        	Vegetales producto_veg=null;
-		            if (carnes.isEmpty()) {
+		            if (vegetales.isEmpty()) {
 		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo vegetal, disculpe las moelstias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
-		            //RECORRER LA LISTA DE VEGETALES E IMPRIMIR EL NOMBRE DE TODOS LOS PRODUCTOS DE ESTE TIPO
+		            for (int x=0;x<vegetales.size();x++) {
+		            	System.out.println((x+1)+". "+vegetales.get(x));
+		            }
 		            int veg=scanner.nextInt();
-		            //ASIGNAR LA VARIABLE LOCAL PRODUCTO COMO APUNTADOR DEL PRODUCTO CON INDICE VEG EN LA LISTA VEGETALES
+		            producto_veg=vegetales.get(veg);
 		            System.out.println(producto_veg.Descripcion()+"\n");
 		            if (producto_veg.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
@@ -91,14 +96,16 @@ public class interfaz {
 		            break;
 		        case(4):
 		        	Tecnologia producto_tec=null;
-		            if (carnes.isEmpty()) {
+		            if (tecnologia.isEmpty()) {
 		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo tecnologicos, disculpe las moelstias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
-		            //RECORRER LA LISTA DE TECNOLOGIA E IMPRIMIR EL NOMBRE DE TODOS LOS PRODUCTOS DE ESTE TIPO
+		            for (int x=0;x<tecnologia.size();x++) {
+		            	System.out.println((x+1)+". "+tecnologia.get(x));
+		            }
 		            int tec=scanner.nextInt();
-		            //ASIGNAR LA VARIABLE LOCAL PRODUCTO COMO APUNTADOR DEL PRODUCTO CON INDICE TEC EN LA LISTA CARNES
+		            producto_tec=tecnologia.get(tec);
 		            System.out.println(producto_tec.Descripcion()+"\n");
 		            System.out.println(producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
@@ -129,9 +136,11 @@ public class interfaz {
 		        		break;
 		        	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
-		            //RECORRER LA LISTA DE CARNES E IMPRIMIR EL NOMBRE DE TODOS LOS PRODUCTOS DE ESTE TIPO
+		            for (int x=0;x<carnes.size();x++) {
+		            	System.out.println((x+1)+". "+carnes.get(x));
+		            }
 		            int car=scanner.nextInt();
-		            //ASIGNAR LA VARIABLE LOCAL PRODUCTO COMO APUNTADOR DEL PRODUCTO CON INDICE CAR EN LA LISTA CARNES
+		            producto_car=carnes.get(car);
 		            System.out.println(producto_car.Descripcion()+"\n");
 		            if (producto_car.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
@@ -148,9 +157,11 @@ public class interfaz {
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
-		            //RECORRER LA LISTA DE LACTEOS E IMPRIMIR EL NOMBRE DE TODOS LOS PRODUCTOS DE ESTE TIPO
+		            for (int x=0;x<lacteos.size();x++) {
+		            	System.out.println((x+1)+". "+lacteos.get(x));
+		            }
 		            int lac=scanner.nextInt();
-		            //ASIGNAR LA VARIABLE LOCAL PRODUCTO COMO APUNTADOR DEL PRODUCTO CON INDICE LAC EN LA LISTA LACTEOS
+		            producto_lac=lacteos.get(lac);
 		            System.out.println(producto_lac.Descripcion()+"\n");
 		            if (producto_lac.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
@@ -167,9 +178,11 @@ public class interfaz {
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
-		            //RECORRER LA LISTA DE VEGETALES E IMPRIMIR EL NOMBRE DE TODOS LOS PRODUCTOS DE ESTE TIPO
+		            for (int x=0;x<vegetales.size();x++) {
+		            	System.out.println((x+1)+". "+vegetales.get(x));
+		            }
 		            int veg=scanner.nextInt();
-		            //ASIGNAR LA VARIABLE LOCAL PRODUCTO COMO APUNTADOR DEL PRODUCTO CON INDICE VEG EN LA LISTA VEGETALES
+		            producto_veg=vegetales.get(veg);
 		            System.out.println(producto_veg.Descripcion()+"\n");
 		            if (producto_veg.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
@@ -186,9 +199,11 @@ public class interfaz {
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
-		            //RECORRER LA LISTA DE TECNOLOGIA E IMPRIMIR EL NOMBRE DE TODOS LOS PRODUCTOS DE ESTE TIPO
+		            for (int x=0;x<tecnologia.size();x++) {
+		            	System.out.println((x+1)+". "+tecnologia.get(x));
+		            }
 		            int tec=scanner.nextInt();
-		            //ASIGNAR LA VARIABLE LOCAL PRODUCTO COMO APUNTADOR DEL PRODUCTO CON INDICE TEC EN LA LISTA CARNES
+		            producto_tec=tecnologia.get(tec);
 		            System.out.println(producto_tec.Descripcion()+"\n");
 		            System.out.println(producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
