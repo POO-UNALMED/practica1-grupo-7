@@ -57,7 +57,7 @@ public class interfaz {
 		        case(1):
 		        	Carnes producto_car=null;
 		        	if (carnes.isEmpty()) {
-		        		System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo carnicos, disculpe las moelstias \n");
+		        		System.out.println("El supermercado "+superm.getNombre()+" no cuenta con productos de tipo carnicos, disculpe las molestias \n");
 		        		break;
 		        	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
@@ -78,7 +78,7 @@ public class interfaz {
 		        case(2):
 		        	Lacteos producto_lac=null;
 		            if (lacteos.isEmpty()) {
-		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo lacteo, disculpe las moelstias \n");
+		            	System.out.println("El supermercado "+superm.getNombre()+" no cuenta con productos de tipo lacteo, disculpe las molestias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
@@ -99,7 +99,7 @@ public class interfaz {
 		        case(3):
 		        	Vegetales producto_veg=null;
 		            if (vegetales.isEmpty()) {
-		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo vegetal, disculpe las moelstias \n");
+		            	System.out.println("El supermercado "+superm.getNombre()+" no cuenta con productos de tipo vegetal, disculpe las molestias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
@@ -120,7 +120,7 @@ public class interfaz {
 		        case(4):
 		        	Tecnologia producto_tec=null;
 		            if (tecnologia.isEmpty()) {
-		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo tecnologicos, disculpe las moelstias \n");
+		            	System.out.println("El supermercado "+superm.getNombre()+" no cuenta con productos de tipo tecnologicos, disculpe las molestias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
@@ -155,7 +155,7 @@ public class interfaz {
 		        case(1):
 		        	Carnes producto_car=null;
 		        	if (carnes.isEmpty()) {
-		        		System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo carnicos, disculpe las moelstias \n");
+		        		System.out.println("El supermercado "+superm.getNombre()+" no cuenta con productos de tipo carnicos, disculpe las molestias \n");
 		        		break;
 		        	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
@@ -176,7 +176,7 @@ public class interfaz {
 		        case(2):
 		        	Lacteos producto_lac=null;
 		            if (lacteos.isEmpty()) {
-		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo lacteo, disculpe las moelstias \n");
+		            	System.out.println("El supermercado "+superm.getNombre()+" no cuenta con productos de tipo lacteo, disculpe las molestias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
@@ -197,7 +197,7 @@ public class interfaz {
 		        case(3):
 		        	Vegetales producto_veg=null;
 		            if (vegetales.isEmpty()) {
-		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo vegetal, disculpe las moelstias \n");
+		            	System.out.println("El supermercado "+superm.getNombre()+" no cuenta con productos de tipo vegetal, disculpe las molestias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
@@ -218,7 +218,7 @@ public class interfaz {
 		        case(4):
 		        	Tecnologia producto_tec=null;
 		            if (tecnologia.isEmpty()) {
-		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo tecnologicos, disculpe las moelstias \n");
+		            	System.out.println("El supermercado "+superm.getNombre()+" no cuenta con productos de tipo tecnologicos, disculpe las molestias \n");
 		            	break;
 		            	}
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
@@ -254,7 +254,7 @@ public class interfaz {
 				System.out.println("Debido a empates o falta de ventas, aun no se ha determinado al mejor empleado, lo sentimos \n");
 			}
 			else {
-				System.out.println("El mejor empleado del supermercado "+superm.getNombre()+"es "+superm.MejorMensajero().getNombre()+"\n");
+				System.out.println("El mejor empleado del supermercado "+superm.getNombre()+" es "+superm.MejorMensajero().getNombre()+"\n");
 			}
 			break;
 		case (3):
@@ -262,11 +262,11 @@ public class interfaz {
 				System.out.println("Debido a empates o falta de ventas, aun no se ha determinado al empleado con mas quejas del supermercado \n");
 			}
 			else {
-				System.out.println("El mejor empleado del supermercado "+superm.getNombre()+"es "+superm.MejorMensajero().getNombre()+"\n");
+				System.out.println("El empleado con mas quejas de "+superm.getNombre()+" es "+superm.MensajeroConMasQuejas().getNombre()+", por ende deberia ser despedido.\n");
 			}
 			break;
 		case (4):
-			System.out.println("En el supermercado "+superm.getNombre()+"el producto mas vendido hasta ahora ha sido: "+superm.prodMasPopular()+";mientras que el menos vendido a sido: "+superm.prodMenosPopular()+"\n");
+			System.out.println("En el supermercado "+superm.getNombre()+" el producto mas vendido hasta ahora ha sido: "+superm.prodMasPopular()+"; mientras que el menos vendido a sido: "+superm.prodMenosPopular()+"\n");
 		break;
 		case (5):
 			System.out.println("Indique que tipo de producto desea agregar al inventario: \n");

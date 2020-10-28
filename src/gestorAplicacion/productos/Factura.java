@@ -75,11 +75,10 @@ public class Factura implements Serializable{
 		return telAtencion;
 	}
 	public String toString() {
-		String ListaDetFact="F";
-		System.out.println(productList.size());
-		for(int i=0;productList.size()<i;i++) {
-			ListaDetFact+=productList.get(i).getId_producto().getNom_producto()+productList.get(i).getCantidad()+productList.get(i).getSubtotal()+"/n";
+		String ListaDetFact="";
+		for(int i=0;i<productList.size();i++) {
+			ListaDetFact+="Producto: "+productList.get(i).getId_producto().getNom_producto()+" Cantidad: "+productList.get(i).getCantidad()+" Precio: "+productList.get(i).getSubtotal()+"\n";
 		}
-		return "Su factura con id "+idFactura+" realizada con el banco "+banco+" genera un total de: "+total+"\n Lista de Productos \n"+ListaDetFact;
+		return "Su factura con id "+idFactura+" realizada con el banco "+banco+" genera un total de: "+total+"\nLista de Productos \n"+ListaDetFact;
 	}
 }

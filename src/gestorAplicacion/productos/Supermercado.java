@@ -103,7 +103,7 @@ public class Supermercado implements Serializable{
 				mayor=cantidadFact;
 				mejorEmpleado=m;
 			}
-			if(cantidadFact==mayor){
+			else if(cantidadFact==mayor){
 			    empate=true;
 			}
 		}
@@ -127,7 +127,7 @@ public class Supermercado implements Serializable{
 				mayorquejas=tamañoquejas;
 				PeorEmpleado=m;
 			}
-			if(tamañoquejas==mayorquejas){
+			else if(tamañoquejas==mayorquejas){
 			    empateQuejas=true;
 			}
 		}
