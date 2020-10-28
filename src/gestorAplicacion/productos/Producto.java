@@ -49,10 +49,11 @@ public abstract class Producto implements Serializable {
 		this.tipo_producto = tipo_producto;
 	}	
 	
-
+    //METODO PARA AGREGAR MAS ITEMS AL STOCK DE UN PRODUCTO
 	public void reStock(int cantidad) {
 		this.stock+=cantidad;
 	}
+	//COMPRUEBA SI LA CANTIDAD A COMPRAR SI ALCANZA DENTRO DEL INVENTARIO QUE ESTE TENGA
 	public boolean comprobarStock(Producto pro,int cant) {
 		
 	    int totalprod=pro.stock-cant;
@@ -63,7 +64,9 @@ public abstract class Producto implements Serializable {
 			return false;
 		}
 }
+	//METODO ABSTRACTO QUE BUSCA QUE CADA TIPO DE PRODUCTO GENERE SU PROPIA DESCRIPCION
 	public abstract String Descripcion();
+	//METODO ABSTRACTO QUE BUSCA GENERA EL EQUIVALENTE A VALOR AGREGADO (IVA*PRECIO) DE CADA TIPO DE PRODUCTO
 	public abstract double valorAgregado();
 	
 }

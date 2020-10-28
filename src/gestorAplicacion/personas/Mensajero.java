@@ -48,31 +48,30 @@ public class Mensajero extends Persona implements Empleado,Serializable{
 	public void setFacturas(ArrayList<Factura> facturas) {
 		this.facturas = facturas;
 	}
+	//BUSCA MOSTRAR EL SALARIO TOTAL DEL MENSAJERO
 	public int pagoTotal() {
 		for (int i=0;i<facturas.size();i++) {
 			salario_mensajero+=facturas.get(i).total*0.05;
 		}
 		return salario_mensajero+=propina+bonoFactura();
 	}
-	//SOBRECARGA METODO 1
+	//SOBRECARGA METODO 1 (BUSCA MOSTRAR EL SALARIO DEL MENSAJERO, Y SI ESTE ES EL MENSAJERO DEL MES SE LE DA UN BONO)
 	public int pagoTotal(Mensajero mensajero) {
-		mensajero=this;
-		for (int i=0;i<facturas.size();i++) {
-			salario_mensajero+=facturas.get(i).total*0.05;
-		}
 		if (mensajero==superm.MejorMensajero()) {
-			return salario_mensajero+=propina+bonoFactura()+100000;
+			return mensajero.pagoTotal()+100000;
 		}
 		else {
-			return salario_mensajero+=propina+bonoFactura();
+			return mensajero.pagoTotal();
 		}
 	}
+	//GENERA EL TOTAL DE BONO SEGUN LA CANTIDAD DE FACTURAS
 	public int bonoFactura() {
-		int bonomult=facturas.size()/5;
+		int bonomult=this.facturas.size()/5;
 		int bono=5000*bonomult;
 		return bono;
 	}
 	@Override
+	//IMPLEMENTA EL METODO DE EMPLEADO
 	public String datosEmpleado() {
 		return this.nombre+" es un mensajero, identificado con "+this.id+
 			   ", su direccion es "+this.direccion+", tiene telefono fijo "+

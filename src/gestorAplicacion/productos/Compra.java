@@ -41,6 +41,7 @@ public class Compra implements Serializable {
 	public static void setTotalCompra(int totalCompra) {
 		Compra.totalCompra = totalCompra;
 	}
+	//EL METODO QUE SUMA LOS PRECIOS,REDUCE LA CANTIDAD,CREA EL DETALLE DE FACTURA CORRESPONDIENTE Y VERIFICA LA RIFA DE UN PRODUCTO AL SER PEDIDO
 	public void agregar(Producto pro,int cant,Supermercado superm) {
 		//ULTIMA FUNCIONALIDAD
 		if (pro instanceof Tecnologia) {
@@ -79,6 +80,7 @@ public class Compra implements Serializable {
 			System.out.println("El producto se encuentra agotado");
 		}
 	}
+	//ESTE METODO CREA LA FACTURA CON LOS DATOS MODIFICADOS POR EL METODO AGREGAR, ADEMAS VERIFICA EL TOTAL PARA DAR PROPINAS,ASIGNA UNA FACTURA A LOS DETALLES DE LA FACTURA,GUARDA LA INFORMACION DE ESTA COMPRA EN LA LISTA DE COMPRAS DEL CAJERO Y ASIGNA UN OBJETO FACTURA A EL OBJETO COMPRA
 	public Factura efectuarCompra(String banco) {
 		contadoridf++;
 		//1ERA FUNCIONALIDAD(IMPLEMENTADA)

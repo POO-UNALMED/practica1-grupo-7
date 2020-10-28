@@ -23,13 +23,14 @@ public class Usuario extends Persona implements Empleado,Serializable{
 		Compras = compras;
 	}
 	@Override
+	//IMPLEMENTA EL METODO DE EMPLEADO
 	public String datosEmpleado() {
 		return this.nombre+" es un cajero, identificado con "+this.id+
 				   ", su direccion es "+this.direccion+", tiene telefono fijo "+
 				   this.telFijo+", y numero adicional "+this.numCelular+"atiende en la caja"+
 				   this.caja+" y tiene con un sueldo de "+Usuario.salario_cajero;
 	}
-	//3ERA FUNCIONALIDAD
+	//3ERA FUNCIONALIDAD PERMITE AL USUARIO QUEJARSE DE UNA COMPRA EN ESPECIFICO
 	public void Quejarse(Compra compra,String queja) {
 		for (int i=0;i<Compras.size();i++) {
 			if (compra==Compras.get(i)) {

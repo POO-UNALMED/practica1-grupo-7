@@ -74,6 +74,7 @@ public class Factura implements Serializable{
 	public String getTelAtencion() {
 		return telAtencion;
 	}
+	//METODO QUE DEVUELVE LA FACTURA EN PANTALLA
 	public String toString() {
 		String ListaDetFact="";
 		for(int i=0;i<productList.size();i++) {

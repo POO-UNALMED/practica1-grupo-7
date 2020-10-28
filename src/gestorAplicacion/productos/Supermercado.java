@@ -90,6 +90,7 @@ public class Supermercado implements Serializable{
 		}
 		
 	}
+	// BUSCA MOSTRAR EL PRODUCTO MENOS POPULAR A TRAVES DE CONTEO DE LA CANTIDAD DE VECES QUE EL NOMBRE ES GUARDADO EN LA LISTA ESTADISTICA
 	public String prodMenosPopular() {
 		String prodNoPop="";
 		int menorveces=0;
@@ -101,7 +102,7 @@ public class Supermercado implements Serializable{
 				menorveces=veces;
 				prodNoPop=Estadisticas.get(i);
 		}
-			else if(veces==mayorveces) {
+			else if(veces==menorveces) {
 				empateProdmenos=true;
 			}
 		}
@@ -112,7 +113,7 @@ public class Supermercado implements Serializable{
 			return prodNoPop;
 		}
 	}
-	//5TA FUNCIONALIDAD (IMPLIMENTADA)
+	//5TA FUNCIONALIDAD (IMPLEMENTADA) BUSCA EL MENSAJERO CON MAS FACTURAS EN SU LISTA DE FACTURAS(ESO INDICARIA QUE HA HECHO LA MAYOR CANTIDAD DE ENVIOS)
 	public Mensajero MejorMensajero() {
 		Mensajero mejorEmpleado=null;
 		int mayor=0;
@@ -136,7 +137,7 @@ public class Supermercado implements Serializable{
 		}
 
 	}
-	//3ERA FUNCIONALIDAD(IMPLEMENTADA)
+	//3ERA FUNCIONALIDAD(IMPLEMENTADA) BUSCA EL MENSAJERO CON EL MAYOR TAMAÑO DE QUEJAS EN SU LISTA DE QUEJAS
 	public Mensajero MensajeroConMasQuejas() {
 		Mensajero PeorEmpleado=null;
 		int mayorquejas=0;
@@ -160,9 +161,9 @@ public class Supermercado implements Serializable{
 		}
 		
 	}
-	//ULTIMA FUNCIONALIDAD
+	//ULTIMA FUNCIONALIDAD QUIERE MOSTRAR CUANTAS PERSONAS GANARON LA RIFA AL COMPRAR UNA ARTICULO DE TECNOLOGIA DE MAS DE 1 MILLON, BUSCA LOS NOMBRES QUE REFIERAN A XIAMI NOTE S(EL PREMIO)
 	public void GanadoresRifa() {
-		int ganadoresrifa=Collections.frequency(Estadisticas, "Xiamo Note S");
+		int ganadoresrifa=Collections.frequency(Estadisticas, "Xiami Note S");
 		System.out.println(ganadoresrifa+"Personas ganaron un celular Xiamo Note S al tener la suerte de ganar la rifa");
 	}
 }

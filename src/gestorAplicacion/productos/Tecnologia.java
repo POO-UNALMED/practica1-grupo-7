@@ -16,13 +16,16 @@ public class Tecnologia extends Producto implements Serializable{
 		super(id_producto,precio,nom_producto,stock,tipo_producto);
 		this.valorAgregado();
 	}
+	//SE IMPLEMENTA EL METODO ABSTRACTO DE PRODUCTO
 	public String Descripcion() {
 		return "Lo Ultimo en tecnologia al alcanze,un  "+this.nom_producto+" de ultima tecnologia";
 	}
+	//SE IMPLEMENTA EL METODO ABSTRACTO DE PRODUCTO
 	public double valorAgregado() {
 		valorAgregado=this.precio*iva;
 		return valorAgregado;
 	}
+	//METODO QUE DETERMINA LA SUERTE DEL JUGADOR
 	public static boolean GirarRuleta() {
 		Random RNG=new Random();
 		int NumberRolled=RNG.nextInt(101);

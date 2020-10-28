@@ -12,16 +12,20 @@ public class Lacteos extends Producto implements Refrigerador,Serializable{
 		this.valorAgregado();
 
 	}
+	//SE IMPLEMENTA EL METODO ABSTRACTO DE PRODUCTO
 	public String Descripcion() {
 		return "De las mejores selecciones de Lacteos un paquete de  "+this.nom_producto;
 	}
+	//SE IMPLEMENTA EL METODO ABSTRACTO DE PRODUCTO
 	public double valorAgregado() {
 		valorAgregado=this.precio*iva;
 		return valorAgregado;
 	}
+	//SE IMPLEMENTA EL METODO DE REFRIGERADOR
 	public boolean esPerecedero() {
 		return true;
 	}
+	//SE IMPLEMENTA EL METODO DE REFRIGERADOR
 	public int temperaturaPreferida() {
 		return -10;
 	}
