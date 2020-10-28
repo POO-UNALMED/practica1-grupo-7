@@ -69,7 +69,7 @@ public class Compra implements Serializable {
 				superm.Estadisticas.add(pro.nom_producto);
 			}
 			subtotal_fact+=pro.precio*cant;
-			sumValorAgregado+=pro.valorAgregado();
+			sumValorAgregado+=pro.valorAgregado()*cant;
 			pro.stock-=cant;
 			Factura facteje=null;
 			DetalleFactura item=new DetalleFactura(facteje,pro,cant,pro.precio*cant);
