@@ -66,30 +66,51 @@ public class Supermercado implements Serializable{
 		   Tecnologia w=new Tecnologia(id_producto,precio,nom_producto,stock,"Tecnologia");
 		   Products.add(w);
 	}
-	//FUNCIONALIDAD 2 (IMPLEMENTADA)
+	//FUNCIONALIDAD 2 (IMPLEMENTADA) BUSCA MOSTRAR EL PRODUCTO MAS POPULAR A TRAVES DE CONTEO DE LA CANTIDAD DE VECES QUE EL NOMBRE ES GUARDADO EN LA LISTA ESTADISTICA
 	public String prodMasPopular(){
 		String prodPop="";
 		int mayorveces = 0;
+		boolean empateProdmas=false;
 		for(int i = 0; i < Estadisticas.size(); i++) {
 			int veces=Collections.frequency(Estadisticas, Estadisticas.get(i));
 			if(veces > mayorveces) {
+				empateProdmas=false;
 				mayorveces = veces;
 				prodPop=Estadisticas.get(i);
 			}
+			else if(veces==mayorveces) {
+				empateProdmas=true;
+			}
 		}
-		return prodPop;
+		if (empateProdmas==true) {
+			return null;
+		}
+		else {
+			return prodPop;
+		}
+		
 	}
 	public String prodMenosPopular() {
 		String prodNoPop="";
 		int menorveces=0;
+		boolean empateProdmenos=false;
 		for(int i = 0; i < Estadisticas.size(); i++) {
 			int veces=Collections.frequency(Estadisticas, Estadisticas.get(i));
 			if(veces<menorveces) {
+				empateProdmenos=false;
 				menorveces=veces;
 				prodNoPop=Estadisticas.get(i);
 		}
+			else if(veces==mayorveces) {
+				empateProdmenos=true;
+			}
 		}
-		return prodNoPop;
+		if (empateProdmenos==true) {
+			return null;
+		}
+		else {
+			return prodNoPop;
+		}
 	}
 	//5TA FUNCIONALIDAD (IMPLIMENTADA)
 	public Mensajero MejorMensajero() {
