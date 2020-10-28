@@ -13,12 +13,12 @@ public class interfaz {
 		ArrayList<Lacteos>lacteos=new ArrayList<Lacteos>();
 		ArrayList<Vegetales>vegetales=new ArrayList<Vegetales>();
 		ArrayList<Tecnologia>tecnologia=new ArrayList<Tecnologia>();
-		System.out.println("Bienvenido al sistema de compra de productos:"+"\n"+"\n"+"Por favor escoja el supermercado donde se relizo la orden: "+"\n"+"\n");
+		System.out.println("Bienvenido al sistema de compra de productos:"+"\n"+"\n"+"Por favor escoja el supermercado donde se relizo la orden: "+"\n");
 		for (int x=0;x<supermercados.size();x++) {
         	System.out.println((x+1)+". "+supermercados.get(x).getNombre());
         }
 		int sup= scanner.nextInt();
-		superm=supermercados.get(sup);
+		superm=supermercados.get(sup-1);
 		for (int x=0;x<superm.getProducts().size();x++) {
 			Producto pro=superm.getProducts().get(x);
 			if (pro instanceof Carnes) {
@@ -70,7 +70,7 @@ public class interfaz {
 		            if (producto_car.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            }
-		            System.out.println("El precio de "+producto_car.nom_producto+"es "+producto_car.precio+"\n");
+		            System.out.println("El precio de "+producto_car.nom_producto+" es "+producto_car.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_car=scanner.nextInt();
 		            compra.agregar(producto_car, cant_car, superm);
@@ -91,7 +91,7 @@ public class interfaz {
 		            if (producto_lac.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            	}
-		            System.out.println("El precio de "+producto_lac.nom_producto+"es "+producto_lac.precio+"\n");
+		            System.out.println("El precio de "+producto_lac.nom_producto+" es "+producto_lac.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_lac=scanner.nextInt();
 		            compra.agregar(producto_lac, cant_lac, superm);
@@ -112,7 +112,7 @@ public class interfaz {
 		            if (producto_veg.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            	}
-		            System.out.println("El precio de "+producto_veg.nom_producto+"es "+producto_veg.precio+"\n");
+		            System.out.println("El precio de "+producto_veg.nom_producto+" es "+producto_veg.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_veg=scanner.nextInt();
 		            compra.agregar(producto_veg, cant_veg, superm);
@@ -130,7 +130,7 @@ public class interfaz {
 		            int tec=scanner.nextInt();
 		            producto_tec=tecnologia.get(tec-1);
 		            System.out.println(producto_tec.Descripcion()+"\n");
-		            System.out.println("El precio de "+producto_tec.nom_producto+"es "+producto_tec.precio+"\n");
+		            System.out.println("El precio de "+producto_tec.nom_producto+"e s "+producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_tec=scanner.nextInt();
 		            compra.agregar(producto_tec, cant_tec, superm);
@@ -168,14 +168,14 @@ public class interfaz {
 		            if (producto_car.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            }
-		            System.out.println("El precio de "+producto_car.nom_producto+"es "+producto_car.precio+"\n");
+		            System.out.println("El precio de "+producto_car.nom_producto+" es "+producto_car.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_car=scanner.nextInt();
 		            compra.agregar(producto_car, cant_car, superm);
 		            break;
 		        case(2):
 		        	Lacteos producto_lac=null;
-		            if (carnes.isEmpty()) {
+		            if (lacteos.isEmpty()) {
 		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo lacteo, disculpe las moelstias \n");
 		            	break;
 		            	}
@@ -189,14 +189,14 @@ public class interfaz {
 		            if (producto_lac.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            	}
-		            System.out.println("El precio de "+producto_lac.nom_producto+"es "+producto_lac.precio+"\n");
+		            System.out.println("El precio de "+producto_lac.nom_producto+" es "+producto_lac.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_lac=scanner.nextInt();
 		            compra.agregar(producto_lac, cant_lac, superm);
 		            break;
 		        case(3):
 		        	Vegetales producto_veg=null;
-		            if (carnes.isEmpty()) {
+		            if (vegetales.isEmpty()) {
 		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo vegetal, disculpe las moelstias \n");
 		            	break;
 		            	}
@@ -210,14 +210,14 @@ public class interfaz {
 		            if (producto_veg.esPerecedero()) {
 		            	System.out.println("Este producto debe mantenerce bajo refrigeracion \n");
 		            	}
-		            System.out.println("El precio de "+producto_veg.nom_producto+"es "+producto_veg.precio+"\n");
+		            System.out.println("El precio de "+producto_veg.nom_producto+" es "+producto_veg.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_veg=scanner.nextInt();
 		            compra.agregar(producto_veg, cant_veg, superm);
 		            break;
 		        case(4):
 		        	Tecnologia producto_tec=null;
-		            if (carnes.isEmpty()) {
+		            if (tecnologia.isEmpty()) {
 		            	System.out.println("El supermercado "+superm.getNombre()+"no cuenta con productos de tipo tecnologicos, disculpe las moelstias \n");
 		            	break;
 		            	}
@@ -228,7 +228,7 @@ public class interfaz {
 		            int tec=scanner.nextInt();
 		            producto_tec=tecnologia.get(tec-1);
 		            System.out.println(producto_tec.Descripcion()+"\n");
-		            System.out.println("El precio de "+producto_tec.nom_producto+"es "+producto_tec.precio+"\n");
+		            System.out.println("El precio de "+producto_tec.nom_producto+" es "+producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            int cant_tec=scanner.nextInt();
 		            compra.agregar(producto_tec, cant_tec, superm);
@@ -239,7 +239,7 @@ public class interfaz {
 		    String bank=scanner.next();
 		    Factura nue_fac=compra.efectuarCompra(bank);
 		    compra.setFact(nue_fac);
-		    nue_fac.toString();
+		    System.out.println(nue_fac.toString());
 		    System.out.println("Se presento alguna queja con respecto al servicio dado: \n 1. Si. \n 2. No.");
 		    int ul=scanner.nextInt();
 		    if (ul==1) {
