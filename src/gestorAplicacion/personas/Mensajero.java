@@ -53,6 +53,7 @@ public class Mensajero extends Persona implements Empleado,Serializable{
 	public int pagoTotal() {
 		if (salarioregistrado==false) {
 			for (int i=0;i<facturas.size();i++) {
+				salario_mensajero=0;
 				salario_mensajero+=facturas.get(i).total*0.05;
 			}
 			salarioregistrado=true;
