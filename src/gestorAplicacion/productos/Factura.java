@@ -17,7 +17,7 @@ public class Factura implements Serializable{
 	public String banco;
 	public static final String telAtencion="911";
 	public  Supermercado superm;
-	Compra compra;
+	public  Compra compra;
 	public  ArrayList <DetalleFactura> productList = new ArrayList<DetalleFactura>();
     public Factura(Mensajero idM,int idFac,Usuario user,double total,double iva,double subTotal,String banco,Compra compra,ArrayList<DetalleFactura> productlist) {
     	this.idMen=idM;
@@ -74,7 +74,7 @@ public class Factura implements Serializable{
 	public String getTelAtencion() {
 		return telAtencion;
 	}
-	//METODO QUE DEVUELVE LA FACTURA EN PANTALLA
+	//METODO QUE DEVUELVE LA FACTURA EN PANTALLA	
 	public String toString() {
 		String ListaDetFact="";
 		for(int i=0;i<productList.size();i++) {
