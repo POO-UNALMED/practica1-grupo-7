@@ -14,6 +14,7 @@ public class Mensajero extends Persona implements Empleado,Serializable{
 	public int propina=0;
 	public int salario_mensajero=0;
 	public Supermercado superm;
+	public boolean salarioregistrado=false;
 	public ArrayList <Factura> facturas=new ArrayList <Factura>();
 	public ArrayList<String> Quejas=new ArrayList<>();
 	public Mensajero(String nombre, String id,String genero,String direccion,String telFijo,String numCelular,String transporte, int contador, int gan_adicional,Supermercado superm) {
@@ -50,10 +51,16 @@ public class Mensajero extends Persona implements Empleado,Serializable{
 	}
 	//BUSCA MOSTRAR EL SALARIO TOTAL DEL MENSAJERO
 	public int pagoTotal() {
-		for (int i=0;i<facturas.size();i++) {
-			salario_mensajero+=facturas.get(i).total*0.05;
+		if (salarioregistrado==false) {
+			for (int i=0;i<facturas.size();i++) {
+				salario_mensajero+=facturas.get(i).total*0.05;
+			}
+			salarioregistrado=true;
+			return salario_mensajero+=propina+bonoFactura();
 		}
-		return salario_mensajero+=propina+bonoFactura();
+		else {
+			return salario_mensajero;
+		}
 	}
 	//SOBRECARGA METODO 1 (BUSCA MOSTRAR EL SALARIO DEL MENSAJERO, Y SI ESTE ES EL MENSAJERO DEL MES SE LE DA UN BONO)
 	public int pagoTotal(Mensajero mensajero) {
