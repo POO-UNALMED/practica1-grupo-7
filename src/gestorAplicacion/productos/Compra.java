@@ -7,16 +7,16 @@ public class Compra implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public Usuario user;
-	public Factura fact;
+	private Usuario user;
+	private Factura fact;
 	public Mensajero menID;
 	public Supermercado superm;
 	public static int contadoridf=0;
-	public static int totalCompra=0;
 	public boolean propinabool=false;
-	public double sumValorAgregado=0;
-	public ArrayList<DetalleFactura>DetalleFacturaList=new ArrayList<>();
+	private double sumValorAgregado=0;
+	private ArrayList<DetalleFactura>DetalleFacturaList=new ArrayList<>();
 	public double subtotal_fact;
+	public double total;
 	public Compra(Usuario user,Factura fac,Mensajero menID,Supermercado superm){
 		this.user=user;
 		this.fact=fac;
@@ -34,12 +34,6 @@ public class Compra implements Serializable {
 	}
 	public void setFact(Factura fact) {
 		this.fact = fact;
-	}
-	public static int getTotalCompra() {
-		return totalCompra;
-	}
-	public static void setTotalCompra(int totalCompra) {
-		Compra.totalCompra = totalCompra;
 	}
 	//EL METODO QUE SUMA LOS PRECIOS,REDUCE LA CANTIDAD,CREA EL DETALLE DE FACTURA CORRESPONDIENTE Y VERIFICA LA RIFA DE UN PRODUCTO AL SER PEDIDO
 	public void agregar(Producto pro,int cant,Supermercado superm) {
@@ -88,7 +82,7 @@ public class Compra implements Serializable {
 			menID.propina+=10000;
 			propinabool=true;
 		}
-		double total=sumValorAgregado+subtotal_fact;
+		total=sumValorAgregado+subtotal_fact;
 		if (propinabool=true) {
 			total+=10000;
 			propinabool=false;
