@@ -43,7 +43,7 @@ public class interfaz {
 		}
 		//SE MUESTRA EL MENU DE TODAS LAS POSIBLES OPERACIONES A REALIZAR Y SE USA UN ESCANER PARA SABER CUAL SE VA A REALIZAR.
 		System.out.println("Por favor seleccione la operacion que desea realizar: \n");
-		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar empleado con mas quejas del supermercado. \n4. Mostrar producto mas y menos vendido por el supermercado. \n5. Agregar producto al inventario del supermercado. \n6. Finalizar operacion.");
+		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar empleado con mas quejas del supermercado. \n4. Mostrar producto mas y menos vendido por el supermercado. \n5. Agregar producto al inventario del supermercado. \n6. Mostrar salario de los mensajeros del supermercado. \n7.Finalizar operacion.");
 		int op1=scanner.nextInt();
 		//SWITCH/CASE PARA CADA UNA DE LAS OPERACIONES DEL SUPERMERCADO.
 		switch (op1) {
@@ -463,8 +463,14 @@ public class interfaz {
 		    break;
 		    }
 	    break;
-	    //CASO PARA LA OPCION 6(Finalizar operacion).
+	    //CASO PARA LA OPCION 6(Mostrar salario de los mensajeros del supermercado)
 		case (6):
+			for (int k=0;k<superm.Empleados.size();k++) {
+				System.out.println("El empleado "+superm.Empleados.get(k).getNombre()+" gana un salario de "+superm.Empleados.get(k).pagoTotal(superm.Empleados.get(k)));
+			}
+		break;
+		//CASO PARA LA OPCION 7(Finalizar operacion).
+		case (7):
 			System.out.println("Gracias por usar nuestro sistema el dia hoy, que tenga un buen dia y una prospera vida \n");
 		break;
 		}
