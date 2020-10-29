@@ -2,6 +2,7 @@ package BaseDatos;
 import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
+import gestorAplicacion.personas.*;
 import gestorAplicacion.productos.*;
 //Esta clase es la encargada de la serializacion de Objetos
 public class Lector implements Serializable{
@@ -48,6 +49,9 @@ public class Lector implements Serializable{
 			do {
 				sup= (Supermercado) o1.readObject();
 				listaObjetos.add(sup);
+				for(Mensajero i:sup.Empleados) {
+					Compra.contadoridf+=i.facturas.size();
+				}
 			}
 			while(o1!=null);
 			o1.close();
