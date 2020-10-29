@@ -4,7 +4,14 @@ import java.util.ArrayList;
 import gestorAplicacion.personas.*;
 import gestorAplicacion.productos.*;
 public class casoBase {
-
+// crearObjetos propone un grupo de arreglos con diferentes caracteristicas para llenar los constructores necesarios para los atributos de supermercado y por ende
+// de las demas clases como mensajero, usuario y productos.
+// Para los 2 primeros se escoge el indice del array usando numeros aleatorios diferentes para cada atributo.
+// En los productos se tienen varios arrrays dependiendo de cada tipo de producto (carne, vegetales, tecnologia o lacteos), se elige un solo numero aleatoreamente
+// y se recorren todos los arrays necesarios para llenar el constructor usandolo como indice.
+// Por ultimo hay 3 arreglos dedicados a ciertos atributos de la clase supermercado, estos se recorren con la variable i del for principal para crear 4 supermercados
+// haciendo uso ademas de las listas de productos, mensajeros y cajeros para asi llenar al completo los requerimientos del constructor
+// el constructor de supermercado hace que cada objeto de esta clase sea añadido a el array listaObjetos en la clase lector, que es el array usado para serializar los objetos	
 	public static void crearObjetos() {
 		String[] nombresGenericos= new String[] {"Carlos", "Juan", "Rosa", "Rosalba", "Jorge", "Mariana", "Matilda", "Steven", "Zaratustra","Clara", "Rafael","Clarence"};
 		String[] idsGenericos=new String[] {"1000294025", "923135078", "980432808", "997453286", "994395782", "967284910", "945285904", "999123456", "666666666","996734653", "998244075","989234086"};

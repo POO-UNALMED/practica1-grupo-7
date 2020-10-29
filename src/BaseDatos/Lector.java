@@ -3,6 +3,7 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
 import gestorAplicacion.productos.*;
+//Esta clase es la encargada de la serializacion de Objetos
 public class Lector implements Serializable{
 	/**
 	 * 
@@ -20,6 +21,8 @@ public class Lector implements Serializable{
 	public static void setListaObjetos(ArrayList<Supermercado> listaObjetos) {
 		Lector.listaObjetos = listaObjetos;
 	}
+// Este bloque estatico se usa para crear el directorio temp y el archivo objetos.txt en donde se hara la serializacion, ademas de crear el caso base para probar el modelo.
+// En caso de ya existir se crea el path necesario para llegar al archivo, el cual se usara en los metodos para leer y escribir objetos	
 	static{
 		File decoy=new File("");
 		try {
@@ -35,6 +38,8 @@ public class Lector implements Serializable{
 			System.out.println("ff");
 		}		
 	}
+//El metodo Leer() crea el stream necesario conectado al path creado anteriormente, luego crea un apuntador de tipo Supermercado y lo usa para pasar los objetos leidos a
+//el arrayList listaObjetos para que el programa pueda usarlos luego.	
 	public static void Leer() {
 		try {
 			f1 = Files.newInputStream(path,StandardOpenOption.READ);
@@ -53,6 +58,8 @@ public class Lector implements Serializable{
 			System.out.println("e");
 		}
 	}
+//El metodo Escribir() crea el stream necesario conectado al path, y despues serializa todos los objetos presentes en el arrayList listaObjetos, esto equivale a todos los
+// objetos del sistema ya que cada supermercado tiene listas de cajeros y mensajeros, que a su vez tienen asociados facturas y todos los demas objetos que componen el modelo	
 	public static void Escribir() {
 
 		try {
