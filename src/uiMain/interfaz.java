@@ -43,7 +43,7 @@ public class interfaz {
 		}
 		//SE MUESTRA EL MENU DE TODAS LAS POSIBLES OPERACIONES A REALIZAR Y SE USA UN ESCANER PARA SABER CUAL SE VA A REALIZAR.
 		System.out.println("Por favor seleccione la operacion que desea realizar: \n");
-		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar empleado con mas quejas del supermercado. \n4. Mostrar producto mas y menos vendido por el supermercado. \n5. Agregar producto al inventario del supermercado. \n6. Mostrar salario de los mensajeros del supermercado. \n7.Finalizar operacion.");
+		System.out.println("1. Realizar facturacion de productos. \n2. Mostrar empleado mas valioso del supermercado. \n3. Mostrar empleado con mas quejas del supermercado. \n4. Mostrar producto mas y menos vendido por el supermercado. \n5. Agregar producto al inventario del supermercado. \n6. Mostrar salario de los mensajeros del supermercado. \n7. Finalizar operacion.");
 		int op1=scanner.nextInt();
 		//SWITCH/CASE PARA CADA UNA DE LAS OPERACIONES DEL SUPERMERCADO.
 		switch (op1) {
@@ -82,7 +82,7 @@ public class interfaz {
 		        	//SE IMPRIMEN TODOS LOS PRODUCTOS DE TIPO CARNE Y SE USA EL ESCANER PARA SELECCIONAR SOBRE EL QUE SE VA A TRABAJAR.
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<carnes.size();x++) {
-		            	System.out.println((x+1)+". "+carnes.get(x).nom_producto);
+		            	System.out.println((x+1)+". Producto: "+carnes.get(x).nom_producto+" Disponibilidad: "+carnes.get(x).stock);
 		            }
 		            int car=scanner.nextInt();
 		            //ASIGNACION A LA VARIABLE LOCAL E IMPRESION DE DATOS DEL PRODUCTO A TRABAJAR.
@@ -109,7 +109,7 @@ public class interfaz {
 		            //SE IMPRIMEN TODOS LOS PRODUCTOS DE TIPO LACTEOS Y SE USA EL ESCANER PARA SELECCIONAR SOBRE EL QUE SE VA A TRABAJAR.
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<lacteos.size();x++) {
-		            	System.out.println((x+1)+". "+lacteos.get(x).nom_producto);
+		            	System.out.println((x+1)+". Producto: "+lacteos.get(x).nom_producto+" Disponibilidad: "+lacteos.get(x).stock);
 		            }
 		            int lac=scanner.nextInt();
 		            //ASIGNACION A LA VARIABLE LOCAL E IMPRESION DE DATOS DEL PRODUCTO A TRABAJAR.
@@ -136,7 +136,7 @@ public class interfaz {
 		            //SE IMPRIMEN TODOS LOS PRODUCTOS DE TIPO VEGETALES Y SE USA EL ESCANER PARA SELECCIONAR SOBRE EL QUE SE VA A TRABAJAR.
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<vegetales.size();x++) {
-		            	System.out.println((x+1)+". "+vegetales.get(x).nom_producto);
+		            	System.out.println((x+1)+". Producto: "+vegetales.get(x).nom_producto+" Disponibilidad: "+vegetales.get(x).stock);
 		            }
 		            int veg=scanner.nextInt();
 		            //ASIGNACION A LA VARIABLE LOCAL E IMPRESION DE DATOS DEL PRODUCTO A TRABAJAR.
@@ -163,13 +163,13 @@ public class interfaz {
 		            //SE IMPRIMEN TODOS LOS PRODUCTOS DE TIPO TECNOLOGIA Y SE USA EL ESCANER PARA SELECCIONAR SOBRE EL QUE SE VA A TRABAJAR.
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<tecnologia.size();x++) {
-		            	System.out.println((x+1)+". "+tecnologia.get(x).nom_producto);
+		            	System.out.println((x+1)+". Producto: "+tecnologia.get(x).nom_producto+" Disponibilidad: "+tecnologia.get(x).stock);
 		            }
 		            int tec=scanner.nextInt();
 		            //ASIGNACION A LA VARIABLE LOCAL E IMPRESION DE DATOS DEL PRODUCTO A TRABAJAR.
 		            producto_tec=tecnologia.get(tec-1);
 		            System.out.println(producto_tec.Descripcion()+"\n");
-		            System.out.println("El precio de "+producto_tec.nom_producto+"e s "+producto_tec.precio+"\n");
+		            System.out.println("El precio de "+producto_tec.nom_producto+" es "+producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            //POR CONSOLA SE INGRESA LA CANTIDAD DEL PRODUCTO A FACTURAR.
 		            int cant_tec=scanner.nextInt();
@@ -208,7 +208,7 @@ public class interfaz {
 		        	//SE IMPRIMEN TODOS LOS PRODUCTOS DE TIPO CARNE Y SE USA EL ESCANER PARA SELECCIONAR SOBRE EL QUE SE VA A TRABAJAR.
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<carnes.size();x++) {
-		            	System.out.println((x+1)+". "+carnes.get(x).nom_producto);
+		            	System.out.println((x+1)+". Producto: "+carnes.get(x).nom_producto+" Disponibilidad: "+carnes.get(x).stock);
 		            }
 		            int car=scanner.nextInt();
 		            //ASIGNACION A LA VARIABLE LOCAL E IMPRESION DE DATOS DEL PRODUCTO A TRABAJAR.
@@ -235,7 +235,7 @@ public class interfaz {
 		            //SE IMPRIMEN TODOS LOS PRODUCTOS DE TIPO LACTEOS Y SE USA EL ESCANER PARA SELECCIONAR SOBRE EL QUE SE VA A TRABAJAR.
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<lacteos.size();x++) {
-		            	System.out.println((x+1)+". "+lacteos.get(x).nom_producto);
+		            	System.out.println((x+1)+". Producto: "+lacteos.get(x).nom_producto+" Disponibilidad: "+lacteos.get(x).stock);
 		            }
 		            int lac=scanner.nextInt();
 		            //ASIGNACION A LA VARIABLE LOCAL E IMPRESION DE DATOS DEL PRODUCTO A TRABAJAR.
@@ -262,7 +262,7 @@ public class interfaz {
 		            //SE IMPRIMEN TODOS LOS PRODUCTOS DE TIPO VEGETALES Y SE USA EL ESCANER PARA SELECCIONAR SOBRE EL QUE SE VA A TRABAJAR.
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<vegetales.size();x++) {
-		            	System.out.println((x+1)+". "+vegetales.get(x).nom_producto);
+		            	System.out.println((x+1)+". Producto: "+vegetales.get(x).nom_producto+" Disponibilidad: "+vegetales.get(x).stock);
 		            }
 		            int veg=scanner.nextInt();
 		            //ASIGNACION A LA VARIABLE LOCAL E IMPRESION DE DATOS DEL PRODUCTO A TRABAJAR.
@@ -289,13 +289,13 @@ public class interfaz {
 		            //SE IMPRIMEN TODOS LOS PRODUCTOS DE TIPO TECNOLOGIA Y SE USA EL ESCANER PARA SELECCIONAR SOBRE EL QUE SE VA A TRABAJAR.
 		            System.out.println("Por favor seleccione el producto que desea facturar: \n");
 		            for (int x=0;x<tecnologia.size();x++) {
-		            	System.out.println((x+1)+". "+tecnologia.get(x).nom_producto);
+		            	System.out.println((x+1)+". Producto: "+tecnologia.get(x).nom_producto+" Disponibilidad: "+tecnologia.get(x).stock);
 		            }
 		            int tec=scanner.nextInt();
 		            //ASIGNACION A LA VARIABLE LOCAL E IMPRESION DE DATOS DEL PRODUCTO A TRABAJAR.
 		            producto_tec=tecnologia.get(tec-1);
 		            System.out.println(producto_tec.Descripcion()+"\n");
-		            System.out.println("El precio de "+producto_tec.nom_producto+"e s "+producto_tec.precio+"\n");
+		            System.out.println("El precio de "+producto_tec.nom_producto+" es "+producto_tec.precio+"\n");
 		            System.out.println("Especifique la cantidad que desea facturar \n");
 		            //POR CONSOLA SE INGRESA LA CANTIDAD DEL PRODUCTO A FACTURAR.
 		            int cant_tec=scanner.nextInt();
@@ -349,10 +349,10 @@ public class interfaz {
 			else if(superm.prodMasPopular()==null && superm.prodMenosPopular()==null) {
 				System.out.println("En el supermercado "+superm.getNombre()+" por motivos de empates o falta de ventas, no se ha determinado aun el producto mas y menos vendido \n");
 			}
-			else if(superm.prodMasPopular()==null && superm.prodMenosPopular()!=null) {
+			else if(superm.prodMasPopular()!=null && superm.prodMenosPopular()==null) {
 				System.out.println("En el supermercado "+superm.getNombre()+" el producto mas vendido hasta ahora ha sido: "+superm.prodMasPopular()+"; sin embargo por motivos de empate no se ha determinado el menos vendido \n");
 			}
-			else if(superm.prodMasPopular()!=null && superm.prodMenosPopular()==null) {
+			else if(superm.prodMasPopular()==null && superm.prodMenosPopular()!=null) {
 				System.out.println("En el supermercado "+superm.getNombre()+" el producto menos vendido hasta ahora ha sido: "+superm.prodMenosPopular()+"; sin embargo por motivos de empate o falta de ventas aun no se ha determinado el mas vendido \n");
 			}
 		break;

@@ -93,16 +93,16 @@ public class Supermercado implements Serializable{
 	// BUSCA MOSTRAR EL PRODUCTO MENOS POPULAR A TRAVES DE CONTEO DE LA CANTIDAD DE VECES QUE EL NOMBRE ES GUARDADO EN LA LISTA ESTADISTICA
 	public String prodMenosPopular() {
 		String prodNoPop="";
-		int menorveces=0;
+		int menorveces=10000000;
 		boolean empateProdmenos=false;
 		for(int i = 0; i < Estadisticas.size(); i++) {
-			int veces=Collections.frequency(Estadisticas, Estadisticas.get(i));
-			if(veces<menorveces) {
+			int vecesmenos=Collections.frequency(Estadisticas, Estadisticas.get(i));
+			if(vecesmenos<menorveces) {
 				empateProdmenos=false;
-				menorveces=veces;
+				menorveces=vecesmenos;
 				prodNoPop=Estadisticas.get(i);
-		}
-			else if(veces==menorveces) {
+			}
+			else if(vecesmenos==menorveces) {
 				empateProdmenos=true;
 			}
 		}

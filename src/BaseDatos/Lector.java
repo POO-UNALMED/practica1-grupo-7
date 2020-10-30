@@ -33,10 +33,8 @@ public class Lector implements Serializable{
 			for (Supermercado e:listaObjetos) {
 				System.out.println(e.getNombre());
 			}
-			System.out.println("ff'nt");
 		} catch (IOException e) {
 			path=Paths.get(decoy.getAbsolutePath()+"\\src\\BaseDatos\\temp\\Objetos.txt");
-			System.out.println("ff");
 		}		
 	}
 //El metodo Leer() crea el stream necesario conectado al path creado anteriormente, luego crea un apuntador de tipo Supermercado y lo usa para pasar los objetos leidos a
@@ -56,7 +54,7 @@ public class Lector implements Serializable{
 			while(o1!=null);
 			o1.close();
 		} catch (IOException e) {
-			System.out.println("f");
+			System.out.println("");
 		}
 		catch(ClassNotFoundException e) {
 			System.out.println("e");
